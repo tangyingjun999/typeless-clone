@@ -1,31 +1,41 @@
 # 架构清点与复刻映射
 
-## 已核实（证据：包内 Info.plist / Frameworks / PlugIns 实读）
+## 原版事实（实读包内文件得出）
 
-- 键盘扩展 `RequestsOpenAccess=true` → 具备网络与麦克风能力，这是"键盘里直接说话"的前提
-- 键盘扩展有自己的 RN bundle → 说明键盘 UI 也是 RN 渲染，原生层只做 `textDocumentProxy` 插入
-- 主 App 有 `UIBackgroundModes: audio` → 录音可在后台持续
-- URL scheme `typeless://` → 键盘通过它唤起宿主 App 完成录音（键盘进程拿不到麦克风）
+- 主 App `com.typeless.mobile` 2.13.0，iOS 16.1+，React Native + Hermes，主 jsbundle 9.8 MB
+- 键盘扩展 `keyboard.appex`，`com.apple.keyboard-service`，`RequestsOpenAccess = true`，自带 4.3 MB RN bundle
+- 灵动岛 `dynamicisland.appex`（WidgetKit Live Activity）
+- URL scheme `typeless://`；后台模式 `audio` / `external-accessory` / `remote-notification`
+- 语音链路：`GET /ws/rt_voice_flow?v=ios_x&t=<AES>&m=0` 流式 WebSocket
+- `out.js` 是 **Hermes 字节码反汇编**（`switch(_fun_ip)`），逻辑不可复用；字符串表可用
+- 中文文案**不在包里**（服务端运行时下发），只能靠截图获取
 
-## 复刻映射表
+## 复刻映射
 
-| 原版组件 | 我们的实现 | 备注 |
+| 原版组件 | 本实现 | 说明 |
 |---|---|---|
-| RN 主 App | RN + Hermes | 页面按规格重写 |
-| keyboard.appex (RN) | 原生 Swift + 轻量 UI | 降低复杂度，视觉对齐 |
-| 录音 | AVAudioEngine + AudioConverter | 16k mono PCM |
-| 流式 ASR | WebSocket 客户端 → 我们的后端或云 API | 接口可切换 |
+| RN 主 App | SwiftUI | 页面重写，视觉对齐 |
+| keyboard.appex (RN) | SwiftUI 键盘扩展 | 全键位 + 长按录音 |
+| 录音 + 编码 | `AVAudioEngine` + `AVAudioConverter` | 16k/16bit/mono |
+| 流式 ASR | `ASRClient` → 自建网关 → 云 ASR | 协议 partial/final |
 | 文本插入 | `textDocumentProxy.insertText` | 与系统键盘同权限 |
-| 登录 | 本地账号密码（Keychain 存 hash） | **唯一差异点** |
-| 订阅/额度 | 本地计数（可选） | 无服务端 |
-| 灵动岛 | ActivityKit | 二期 |
+| 历史记录 | App Group `records.json` | 两进程共享 |
+| 登录 | 本地账号密码（CryptoKit 加盐哈希） | **唯一差异** |
+| 引导/权限流程 | `OnboardingView` 4 步 | 键盘 → 完全访问 → 麦克风 |
+| 灵动岛 | 未实现 | 二期 |
 
-## 与原版的差异清单（必须显式承认）
+## 关键技术约束
 
-1. 识别引擎不同 → 准确率/延迟曲线不同
-2. 无云端账号体系 → 换设备不迁移
-3. 无原版的多语言运行时下发 → 文案内置
+1. **键盘扩展必须有 `RequestsOpenAccess = true`**，否则拿不到麦克风与网络。
+2. 键盘扩展**不能**用 `UIApplication`，Shared 层不做任何 `UIApplication` 调用。
+3. 跨进程共享依赖 **App Group** `group.com.tlb.speech`；`Cfg.shared` 在拿不到 App Group 时自动退回 `UserDefaults.standard`（不崩，但不同步）。
+4. iOS ATS 不允许明文 `ws://`，生产必须 `wss://`。
+5. 未签名安装（TrollStore 类）需要 ad-hoc 签名并带上 entitlements，否则 App Group 失效——CI 里用 `codesign -f -s - --entitlements` 处理。
 
-## 待补规格（需要你配合）
+## 已知风险
 
-- 逐屏截图（首页/历史/设置/引导/键盘）——中文文案是运行时下发的，包里没有
+| 风险 | 影响 | 处置 |
+|---|---|---|
+| App Group 在非越狱环境不可用 | 记录不共享、键盘读不到网关 | 键盘内保留本地副本 + 提示；后续可改 Keychain 共享 |
+| 键盘扩展被系统回收 | 录音中断 | 长按期间保持 AVAudioSession active，必要时提示重按 |
+| 云 ASR 延迟 | 松手后等待 | 网关侧做 partial 预推 + 5 秒兜底收尾 |

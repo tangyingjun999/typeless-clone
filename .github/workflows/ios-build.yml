@@ -1,0 +1,35 @@
+name: ios-build
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Install deps
+        working-directory: app
+        run: npm ci || npm install
+      - name: Bundle JS
+        working-directory: app
+        run: npx react-native bundle --platform ios --dev false \
+             --entry-file index.js --bundle-output ../ios/App/main.jsbundle \
+             --assets-dest ../ios/App
+      - name: Build (unsigned)
+        working-directory: ios/App
+        run: |
+          xcodebuild -workspace Typeless.xcworkspace -scheme Typeless \
+            -configuration Release -sdk iphoneos -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" \
+            | xcpretty || xcodebuild -workspace Typeless.xcworkspace -scheme Typeless \
+            -configuration Release -sdk iphoneos -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=""
+      - name: Package ipa
+        run: |
+          mkdir -p out/Payload
+          cp -R ios/App/build/Build/Products/Release-iphoneos/Typeless.app out/Payload/
+          cd out && zip -qry Typeless-clone.ipa Payload
+      - uses: actions/upload-artifact@v4
+        with: { name: ipa, path: out/Typeless-clone.ipa }

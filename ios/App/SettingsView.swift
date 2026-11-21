@@ -2,6 +2,11 @@ import SwiftUI
 import AVFoundation
 import UIKit
 
+struct LangOpt: Identifiable {
+    let id: String
+    let name: String
+}
+
 struct SettingsView: View {
     @EnvironmentObject var auth: AuthState
     @ObservedObject private var store = RecordStore.shared
@@ -12,7 +17,9 @@ struct SettingsView: View {
     @State private var showReplay = false
     @State private var savedTip: String? = nil
 
-    private let langs = [("auto", "自动识别"), ("zh-CN", "中文"), ("en-US", "English")]
+    private let langs = [LangOpt(id: "auto", name: "自动识别"),
+                         LangOpt(id: "zh-CN", name: "中文"),
+                         LangOpt(id: "en-US", name: "English")]
 
     var body: some View {
         NavigationStack {
@@ -51,8 +58,8 @@ struct SettingsView: View {
                     SecureField("网关口令（可选）", text: $asrToken)
 
                     Picker("识别语言", selection: $lang) {
-                        ForEach(langs, id: \.0) { item in
-                            Text(item.1).tag(item.0)
+                        ForEach(langs) { item in
+                            Text(item.name).tag(item.id)
                         }
                     }
 

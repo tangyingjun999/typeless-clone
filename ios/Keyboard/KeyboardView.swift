@@ -68,8 +68,8 @@ final class KeyboardModel: ObservableObject {
         asr.start()
 
         let cap = AudioCapture()
-        cap.onPCM = { d in asr.send(pcm: d) }
-        cap.onLevel = { l in
+        cap.onPCM = { [weak asr] d in asr?.send(pcm: d) }
+        cap.onLevel = { [weak self] l in
             DispatchQueue.main.async { self?.level = CGFloat(l) }
         }
         do {
@@ -100,7 +100,7 @@ final class KeyboardModel: ObservableObject {
             asr = nil
             state = 0
             beganAt = nil
-            insert(" ")
+            insert?(" ")
             return
         }
 
@@ -122,7 +122,7 @@ final class KeyboardModel: ObservableObject {
             hint = lastSeconds < 0.5 ? "按住说话" : "没听清，再说一次"
             return
         }
-        insert(t)
+        insert?(t)
         partial = ""
         hint = ""
     }
@@ -144,6 +144,10 @@ final class KeyboardModel: ObservableObject {
 struct KeyboardView: View {
     @ObservedObject var model: KeyboardModel
     @State private var holding = false
+
+    init(model: KeyboardModel) {
+        _model = ObservedObject(wrappedValue: model)
+    }
 
     private let row1 = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"]
     private let row2 = ["a", "s", "d", "f", "g", "h", "j", "k", "l"]
@@ -351,6 +355,13 @@ struct KeyCap: View {
     var fg: Color
     var action: () -> Void
     @State private var pressed = false
+
+    init(text: String, bg: Color, fg: Color, action: @escaping () -> Void) {
+        self.text = text
+        self.bg = bg
+        self.fg = fg
+        self.action = action
+    }
 
     var body: some View {
         Text(text)

@@ -1,0 +1,56 @@
+name: Typeless
+options:
+  bundleIdPrefix: com.tlb
+  deploymentTarget:
+    iOS: "16.1"
+  createIntermediateGroups: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    IPHONEOS_DEPLOYMENT_TARGET: "16.1"
+    CODE_SIGN_IDENTITY: ""
+    CODE_SIGNING_REQUIRED: "NO"
+    CODE_SIGNING_ALLOWED: "NO"
+    ENABLE_USER_SCRIPT_SANDBOXING: "NO"
+    SWIFT_OPTIMIZATION_LEVEL: "-O"
+
+targets:
+  Typeless:
+    type: application
+    platform: iOS
+    sources:
+      - path: App
+      - path: Shared
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.tlb.speech
+        PRODUCT_NAME: Typeless
+        INFOPLIST_FILE: Resources/App-Info.plist
+        CODE_SIGN_ENTITLEMENTS: Resources/App.entitlements
+        TARGETED_DEVICE_FAMILY: "1"
+    dependencies:
+      - target: TypelessKeyboard
+        embed: true
+
+  TypelessKeyboard:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: Keyboard
+      - path: Shared
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.tlb.speech.keyboard
+        PRODUCT_NAME: TypelessKeyboard
+        INFOPLIST_FILE: Resources/Keyboard-Info.plist
+        CODE_SIGN_ENTITLEMENTS: Resources/Keyboard.entitlements
+        TARGETED_DEVICE_FAMILY: "1"
+
+schemes:
+  Typeless:
+    build:
+      targets:
+        Typeless: all
+    run:
+      config: Release

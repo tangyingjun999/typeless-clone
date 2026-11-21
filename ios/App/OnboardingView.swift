@@ -11,6 +11,10 @@ struct OnboardingView: View {
 
     private let total = 4
 
+    init(onFinish: @escaping () -> Void) {
+        self.onFinish = onFinish
+    }
+
     var body: some View {
         VStack(spacing: 0) {
             TabView(selection: $step) {

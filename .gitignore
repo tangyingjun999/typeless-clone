@@ -1,0 +1,10 @@
+ios/build/
+ios/*.xcodeproj/
+ios/*.xcworkspace/
+ios/xcodebuild.log
+ios/Typeless.ipa
+ios/out/
+*.ipa
+.DS_Store
+node_modules/
+__pycache__/

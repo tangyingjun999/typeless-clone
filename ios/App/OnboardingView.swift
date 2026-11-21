@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 import AVFoundation
 
 /// 首次引导：欢迎 → 添加键盘 → 完全访问 → 麦克风权限

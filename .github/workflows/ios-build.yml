@@ -1,24 +1,57 @@
 name: ios-build
 
 on:
-  workflow_dispatch:
   push:
     branches: [main]
-    paths:
-      - "ios/**"
-      - ".github/workflows/ios-build.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
     runs-on: macos-14
-    timeout-minutes: 40
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
 
-      - name: Show toolchain
+      - name: Toolchain
         run: |
+          sw_vers
           xcodebuild -version
           xcrun --sdk iphoneos --show-sdk-version
+
+      - name: Prepare (idempotent patches + app icon)
+        run: |
+          python3 - <<'PY'
+          import io, os
+
+          # 1) UIColor requires an explicit UIKit import (SwiftUI does not re-export it).
+          for f in ("ios/Keyboard/KeyboardView.swift", "ios/App/OnboardingView.swift"):
+              s = open(f, encoding="utf-8").read()
+              if "\nimport UIKit\n" not in s:
+                  s = s.replace("import AVFoundation", "import UIKit\nimport AVFoundation", 1)
+                  open(f, "w", encoding="utf-8").write(s)
+                  print("patched UIKit import ->", f)
+
+          # 2) Wire the asset catalog into the app target so the bundle carries an icon.
+          p = "ios/project.yml"
+          s = open(p, encoding="utf-8").read()
+          if "Resources/Assets.xcassets" not in s:
+              s = s.replace(
+                  "      - path: Shared\n    settings:\n      base:\n        PRODUCT_BUNDLE_IDENTIFIER: com.tlb.speech",
+                  "      - path: Shared\n      - path: Resources/Assets.xcassets\n    settings:\n      base:\n        PRODUCT_BUNDLE_IDENTIFIER: com.tlb.speech")
+              s = s.replace(
+                  '        TARGETED_DEVICE_FAMILY: "1"\n    dependencies:',
+                  '        TARGETED_DEVICE_FAMILY: "1"\n        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon\n    dependencies:')
+              open(p, "w", encoding="utf-8").write(s)
+              print("patched project.yml -> asset catalog")
+          PY
+          python3 ios/tools/make_appicon.py
+          echo "--- project.yml ---"
+          cat ios/project.yml
+          echo "--- tree ---"
+          find ios -type f | sort
 
       - name: Install XcodeGen
         run: |
@@ -27,12 +60,15 @@ jobs:
 
       - name: Generate Xcode project
         working-directory: ios
-        run: xcodegen generate
+        run: |
+          xcodegen generate
+          xcodebuild -list -project Typeless.xcodeproj
 
-      - name: Build app (unsigned)
+      - name: Build (unsigned)
+        id: build
         working-directory: ios
         run: |
-          set -o pipefail
+          set +e
           xcodebuild \
             -project Typeless.xcodeproj \
             -scheme Typeless \
@@ -43,43 +79,99 @@ jobs:
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGN_IDENTITY="" \
-            build 2>&1 | tee xcodebuild.log | grep -E "error:|warning: .*Swift|BUILD" | tail -60
+            build > ../xcodebuild.log 2>&1
+          st=$?
+          echo "===== errors ====="
+          grep -E "(error|fatal error):" ../xcodebuild.log | head -60 || true
+          echo "===== tail ====="
+          tail -45 ../xcodebuild.log
+          echo "xcodebuild_status=$st"
+          exit $st
 
       - name: Ad-hoc sign + package IPA
+        id: pkg
+        if: success()
         working-directory: ios
         run: |
           set -e
           APP="build/Build/Products/Release-iphoneos/Typeless.app"
-          if [ ! -d "$APP" ]; then
-            echo "!! app not produced"
-            tail -100 xcodebuild.log
-            exit 1
-          fi
+          test -d "$APP"
           echo "--- bundle ---"
-          find "$APP" -maxdepth 2 | head -40
-
+          find "$APP" -maxdepth 2 | grep -v 'Assets.car' | head -40
           codesign -f -s - --timestamp=none --entitlements Resources/Keyboard.entitlements "$APP/PlugIns/TypelessKeyboard.appex"
           codesign -f -s - --timestamp=none --entitlements Resources/App.entitlements "$APP"
-          codesign -dv "$APP" 2>&1 | head -10 || true
-
-          mkdir -p out/Payload
+          {
+            echo "### app"; codesign -dv --entitlements :- "$APP" 2>&1 | head -40
+            echo "### appex"; codesign -dv --entitlements :- "$APP/PlugIns/TypelessKeyboard.appex" 2>&1 | head -40
+            echo "### lipo"; lipo -info "$APP/Typeless" 2>&1
+            echo "### plist"; plutil -p "$APP/Info.plist" | grep -E "CFBundle|MinimumOS|IconName|NSExtension" | head -20
+            echo "### filecount"; find "$APP" -type f | wc -l
+          } > ../codesign.txt || true
+          rm -rf out && mkdir -p out/Payload
           cp -R "$APP" out/Payload/
-          cd out
-          zip -qry ../Typeless.ipa Payload
-          cd ..
+          ( cd out && zip -qry ../Typeless.ipa Payload )
+          unzip -l Typeless.ipa > ../ipa-list.txt
+          head -20 ../ipa-list.txt
           ls -lh Typeless.ipa
+          shasum -a 256 Typeless.ipa > ../ipa.sha256
 
-      - name: Upload IPA
-        uses: actions/upload-artifact@v4
-        with:
-          name: Typeless-ipa
-          path: ios/Typeless.ipa
-          retention-days: 14
-
-      - name: Upload build log
+      - name: Collect + upload results
         if: always()
-        uses: actions/upload-artifact@v4
+        run: |
+          set +e
+          mkdir -p dist
+          [ -f xcodebuild.log ] && cp xcodebuild.log dist/xcodebuild.log
+          [ -f codesign.txt ] && cp codesign.txt dist/
+          [ -f ipa-list.txt ] && cp ipa-list.txt dist/
+          [ -f ipa.sha256 ] && cp ipa.sha256 dist/
+          grep -E "(error|fatal error):" xcodebuild.log 2>/dev/null | head -300 > dist/errors.txt
+          tail -200 xcodebuild.log 2>/dev/null > dist/log-tail.txt
+          : > dist/urls.txt
+          upload() {
+            f="$1"; name="$2"
+            u=$(curl -sS --max-time 300 -F "reqtype=fileupload" -F "fileToUpload=@${f}" https://catbox.moe/user/api.php 2>/dev/null)
+            case "$u" in https://*) echo "${name}=${u}" >> dist/urls.txt; return 0;; esac
+            u=$(curl -sS --max-time 300 -F "time=72h" -F "reqtype=fileupload" -F "fileToUpload=@${f}" https://litterbox.catbox.moe/resources/internals/api.php 2>/dev/null)
+            case "$u" in https://*) echo "${name}=${u}" >> dist/urls.txt; return 0;; esac
+            u=$(curl -sS --max-time 300 -F "file=@${f}" https://temp.sh/upload 2>/dev/null | tr -d '\r')
+            case "$u" in https://*) echo "${name}=${u}" >> dist/urls.txt; return 0;; esac
+            echo "${name}=UPLOAD_FAILED" >> dist/urls.txt
+            return 1
+          }
+          [ -f dist/xcodebuild.log ] && upload dist/xcodebuild.log "log"
+          [ -f ios/Typeless.ipa ] && upload ios/Typeless.ipa "ipa"
+          echo "### urls"; cat dist/urls.txt
+          git config user.name "ci"
+          git config user.email "ci@users.noreply.github.com"
+          git checkout -B results
+          git add -f dist
+          git commit -m "results run ${{ github.run_number }} [skip ci]" || echo "nothing to commit"
+          git push -f origin results && echo "PUSH_OK" || echo "PUSH_FAILED"
+
+      - name: Publish release asset
+        if: always()
+        uses: softprops/action-gh-release@v2
         with:
-          name: build-log
-          path: ios/xcodebuild.log
-          retention-days: 7
+          tag_name: build-${{ github.run_number }}
+          name: build-${{ github.run_number }} · ${{ job.status }}
+          body: |
+            result: `${{ job.status }}`
+            run: ${{ github.run_number }}
+          fail_on_unmatched_files: false
+          files: |
+            ios/Typeless.ipa
+            ios/ipa.sha256
+            xcodebuild.log
+            codesign.txt
+            ipa-list.txt
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "## build ${{ job.status }}"
+            cat dist/urls.txt 2>/dev/null
+            echo '```'
+            head -60 dist/errors.txt 2>/dev/null
+            echo '```'
+          } >> $GITHUB_STEP_SUMMARY

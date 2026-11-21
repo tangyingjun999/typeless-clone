@@ -22,6 +22,7 @@ targets:
     sources:
       - path: App
       - path: Shared
+      - path: Resources/Assets.xcassets
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.tlb.speech
@@ -29,6 +30,7 @@ targets:
         INFOPLIST_FILE: Resources/App-Info.plist
         CODE_SIGN_ENTITLEMENTS: Resources/App.entitlements
         TARGETED_DEVICE_FAMILY: "1"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
     dependencies:
       - target: TypelessKeyboard
         embed: true
@@ -37,8 +39,9 @@ targets:
     type: app-extension
     platform: iOS
     sources:
-      - path: Keyboard
       - path: Shared
+      - path: Keyboard/KeyboardViewController.swift
+      - path: Keyboard/KeyboardView.swift
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.tlb.speech.keyboard

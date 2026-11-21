@@ -1,112 +1,74 @@
-//
-//  KeyboardViewController.swift
-//  与原版一致的键盘：一个麦克风键，按住说话，松开插入文本
-//  前提：Info.plist 里 RequestsOpenAccess = true（否则拿不到麦克风与网络）
-//
 import UIKit
-import AVFoundation
+import SwiftUI
 
+/// 键盘主控制器：整个键盘 UI 用 SwiftUI 画，插入文本走 textDocumentProxy
 final class KeyboardViewController: UIInputViewController {
 
-    private let micButton = UIButton(type: .system)
-    private let hintLabel = UILabel()
-    private var recorder: AudioCapture?
-    private var asr: StreamingASR?
+    private var host: UIHostingController<KeyboardView>?
+    private let model = KeyboardModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .clear
+        setupHeight()
         setupUI()
+        wire()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // 未授权完全访问时，与原版一致：给出引导，而不是静默失败
-        if !hasFullAccess { showFullAccessGuide() }
+        // 有完全访问才写这个标记，App 里据此判断是否就绪
+        if hasFullAccess {
+            Cfg.shared.set(true, forKey: Cfg.kFullAccess)
+            Cfg.shared.synchronize()
+        }
+        model.needsFullAccess = !hasFullAccess
+        model.refreshConfig()
+    }
+
+    private func setupHeight() {
+        let h = view.heightAnchor.constraint(equalToConstant: 292)
+        h.priority = UILayoutPriority(999)
+        h.isActive = true
     }
 
     private func setupUI() {
-        let bar = UIStackView()
-        bar.axis = .horizontal
-        bar.alignment = .center
-        bar.spacing = 10
-        bar.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(bar)
-
-        micButton.setImage(UIImage(systemName: "mic.fill"), for: .normal)
-        micButton.tintColor = .white
-        micButton.backgroundColor = UIColor(red: 0.10, green: 0.45, blue: 0.90, alpha: 1)
-        micButton.layer.cornerRadius = 22
-        micButton.translatesAutoresizingMaskIntoConstraints = false
-        micButton.widthAnchor.constraint(equalToConstant: 44).isActive = true
-        micButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
-        micButton.addTarget(self, action: #selector(micDown), for: .touchDown)
-        micButton.addTarget(self, action: #selector(micUp), for: [.touchUpInside, .touchUpOutside, .touchCancel])
-
-        hintLabel.text = "按住说话"
-        hintLabel.font = .systemFont(ofSize: 13)
-        hintLabel.textColor = .secondaryLabel
-
-        bar.addArrangedSubview(micButton)
-        bar.addArrangedSubview(hintLabel)
-        bar.addArrangedSubview(UIView())
-
+        let root = KeyboardView(model: model)
+        let h = UIHostingController(rootView: root)
+        h.view.backgroundColor = .clear
+        addChild(h)
+        view.addSubview(h.view)
+        h.view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            bar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
-            bar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
-            bar.topAnchor.constraint(equalTo: view.topAnchor, constant: 6),
-            bar.heightAnchor.constraint(equalToConstant: 44),
+            h.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            h.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            h.view.topAnchor.constraint(equalTo: view.topAnchor),
+            h.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+        h.didMove(toParent: self)
+        host = h
     }
 
-    private func showFullAccessGuide() {
-        hintLabel.text = "设置 → 通用 → 键盘 → 开启「允许完全访问」"
-        hintLabel.textColor = .systemOrange
-    }
-
-    // MARK: - 录音
-
-    @objc private func micDown() {
-        guard hasFullAccess else { showFullAccessGuide(); return }
-        hintLabel.text = "听写中…"
-        hintLabel.textColor = .systemBlue
-
-        let asr = StreamingASR(baseURL: AppConfig.asrBaseURL, token: AppConfig.asrToken)
-        asr.onPartial = { [weak self] text in
-            DispatchQueue.main.async { self?.hintLabel.text = text.isEmpty ? "听写中…" : text }
-        }
-        asr.onFinal = { [weak self] text in
-            DispatchQueue.main.async {
-                guard let self else { return }
-                if !text.isEmpty { self.textDocumentProxy.insertText(text) }
-                self.hintLabel.text = "按住说话"
-                self.hintLabel.textColor = .secondaryLabel
+    private func wire() {
+        model.insert = { [weak self] text in
+            guard let self else { return }
+            self.textDocumentProxy.insertText(text)
+            if text.count > 2 {
+                RecordStore.shared.add(text: text, seconds: self.model.lastSeconds, source: "keyboard")
             }
         }
-        asr.start()
-
-        let cap = AudioCapture()
-        cap.onPCM = { data in asr.send(pcm: data) }
-        try? cap.start()
-        recorder = cap
-        self.asr = asr
+        model.del = { [weak self] in
+            self?.textDocumentProxy.deleteBackward()
+        }
+        model.nextKb = { [weak self] in
+            self?.advanceToNextInputMode()
+        }
+        model.dismiss = { [weak self] in
+            self?.dismissKeyboard()
+        }
     }
 
-    @objc private func micUp() {
-        recorder?.stop(); recorder = nil
-        asr?.finish()   // 等服务端给最终结果后再插入
+    override func textDidChange(_ textInput: UITextInput?) {
+        super.textDidChange(textInput)
     }
-
-    // MARK: - 键盘尺寸
-
-    override var needsInputModeSwitchKey: Bool { true }
-
-    override func textWillChange(_ textInput: UITextInput?) {}
-    override func textDidChange(_ textInput: UITextInput?) {}
-}
-
-enum AppConfig {
-    /// 换成你自己的 ASR 网关；留空则用 OpenAI Whisper 直连
-    static let asrBaseURL = "wss://your-asr-gateway.example.com/ws/stream"
-    static let asrToken = ProcessInfo.processInfo.environment["ASR_TOKEN"] ?? ""
 }

@@ -1,35 +1,85 @@
 name: ios-build
+
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "ios/**"
+      - ".github/workflows/ios-build.yml"
 
 jobs:
   build:
     runs-on: macos-14
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with: { node-version: '20' }
-      - name: Install deps
-        working-directory: app
-        run: npm ci || npm install
-      - name: Bundle JS
-        working-directory: app
-        run: npx react-native bundle --platform ios --dev false \
-             --entry-file index.js --bundle-output ../ios/App/main.jsbundle \
-             --assets-dest ../ios/App
-      - name: Build (unsigned)
-        working-directory: ios/App
+
+      - name: Show toolchain
         run: |
-          xcodebuild -workspace Typeless.xcworkspace -scheme Typeless \
-            -configuration Release -sdk iphoneos -derivedDataPath build \
-            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" \
-            | xcpretty || xcodebuild -workspace Typeless.xcworkspace -scheme Typeless \
-            -configuration Release -sdk iphoneos -derivedDataPath build \
-            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=""
-      - name: Package ipa
+          xcodebuild -version
+          xcrun --sdk iphoneos --show-sdk-version
+
+      - name: Install XcodeGen
         run: |
+          brew install xcodegen
+          xcodegen --version
+
+      - name: Generate Xcode project
+        working-directory: ios
+        run: xcodegen generate
+
+      - name: Build app (unsigned)
+        working-directory: ios
+        run: |
+          set -o pipefail
+          xcodebuild \
+            -project Typeless.xcodeproj \
+            -scheme Typeless \
+            -configuration Release \
+            -sdk iphoneos \
+            -derivedDataPath build \
+            ONLY_ACTIVE_ARCH=NO \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            build 2>&1 | tee xcodebuild.log | grep -E "error:|warning: .*Swift|BUILD" | tail -60
+
+      - name: Ad-hoc sign + package IPA
+        working-directory: ios
+        run: |
+          set -e
+          APP="build/Build/Products/Release-iphoneos/Typeless.app"
+          if [ ! -d "$APP" ]; then
+            echo "!! app not produced"
+            tail -100 xcodebuild.log
+            exit 1
+          fi
+          echo "--- bundle ---"
+          find "$APP" -maxdepth 2 | head -40
+
+          codesign -f -s - --timestamp=none --entitlements Resources/Keyboard.entitlements "$APP/PlugIns/TypelessKeyboard.appex"
+          codesign -f -s - --timestamp=none --entitlements Resources/App.entitlements "$APP"
+          codesign -dv "$APP" 2>&1 | head -10 || true
+
           mkdir -p out/Payload
-          cp -R ios/App/build/Build/Products/Release-iphoneos/Typeless.app out/Payload/
-          cd out && zip -qry Typeless-clone.ipa Payload
-      - uses: actions/upload-artifact@v4
-        with: { name: ipa, path: out/Typeless-clone.ipa }
+          cp -R "$APP" out/Payload/
+          cd out
+          zip -qry ../Typeless.ipa Payload
+          cd ..
+          ls -lh Typeless.ipa
+
+      - name: Upload IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: Typeless-ipa
+          path: ios/Typeless.ipa
+          retention-days: 14
+
+      - name: Upload build log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-log
+          path: ios/xcodebuild.log
+          retention-days: 7

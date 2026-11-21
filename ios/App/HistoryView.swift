@@ -46,7 +46,7 @@ struct HistoryView: View {
             .navigationTitle("听写记录")
             .navigationBarTitleDisplayMode(.large)
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
+                ToolbarItem(placement: .navigationBarTrailing) {
                     if !store.items.isEmpty {
                         Menu {
                             Button("刷新") { store.reload() }

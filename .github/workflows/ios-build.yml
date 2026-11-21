@@ -8,10 +8,14 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: ios-build-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   build:
-    runs-on: macos-14
-    timeout-minutes: 45
+    runs-on: xcode-27
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
 
@@ -55,8 +59,18 @@ jobs:
 
       - name: Install XcodeGen
         run: |
-          brew install xcodegen
+          set -e
+          if command -v xcodegen >/dev/null 2>&1; then xcodegen --version; exit 0; fi
+          cd "$RUNNER_TEMP"
+          curl -fsSL -o xcodegen.zip https://github.com/yonaskolb/XcodeGen/releases/download/2.44.1/xcodegen.zip
+          unzip -qo xcodegen.zip
+          mkdir -p "$HOME/.local/bin"
+          cp -R xcodegen/bin/* xcodegen/share . 2>/dev/null || true
+          cp xcodegen/bin/xcodegen "$HOME/.local/bin/xcodegen" 2>/dev/null || cp -R xcodegen/* "$HOME/.local/bin/" 2>/dev/null || true
+          chmod +x "$HOME/.local/bin/xcodegen" 2>/dev/null || true
+          export PATH="$HOME/.local/bin:$PATH"
           xcodegen --version
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
 
       - name: Generate Xcode project
         working-directory: ios

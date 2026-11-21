@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 /// 视觉基调：跟随系统明暗，主色偏蓝（与原版接近）
 enum Theme {

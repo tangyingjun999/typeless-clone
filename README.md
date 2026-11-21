@@ -1,36 +1,74 @@
-# Typeless 同款（自研版）
+# 语音听写（Typeless 同款 · 自研实现）
 
-目标：做出与 Typeless 2.13.0 **交互/流程/外观一致**的自有产品，唯一差异 = 登录改为本地账号密码。
+目标：做出与 Typeless 2.13.0 **交互、流程、外观一致**的自有产品；唯一差异 = 登录改为**本地账号密码**（不联网、无服务端账号）。
 
-## 原版事实（来自包清点）
+## 当前形态
 
-| 项 | 原版 |
+| 项 | 实现 |
 |---|---|
-| 主 App | com.typeless.mobile 2.13.0，iOS 16.1+，React Native + Hermes |
-| 主 JS | main.jsbundle 9.8 MB（Hermes 字节码） |
-| 键盘扩展 | keyboard.appex，`com.apple.keyboard-service`，`RequestsOpenAccess = true`，**自身也是 RN（4.3MB bundle）** |
-| 灵动岛 | dynamicisland.appex（WidgetKit Live Activity） |
-| URL scheme | `typeless://` |
-| 后台模式 | audio / external-accessory / remote-notification |
-| 语音链路 | `GET /ws/rt_voice_flow?v=ios_x&t=<AES>&m=0` WebSocket 流式 |
+| 主 App | SwiftUI，iOS 16.1+，`com.tlb.speech` |
+| 键盘扩展 | `TypelessKeyboard.appex`，`com.apple.keyboard-service`，`RequestsOpenAccess = true` |
+| 键盘 UI | SwiftUI 全键位 QWERTY + 麦克风长按 |
+| 录音 | 键盘扩展内 `AVAudioEngine` → 16k/16bit/mono PCM |
+| 识别 | 流式 WebSocket → 自建网关 → 云 ASR（Deepgram / Whisper / 火山，可切换） |
+| 记录 | App Group 内 `records.json`，App 与键盘共享 |
+| 登录 | 本地账号密码，CryptoKit 9000 轮加盐哈希 |
+| 构建 | GitHub Actions `macos-14` + XcodeGen，产出未签名 ipa |
 
-## 三个确定的技术选型
+## 为什么不用 React Native
 
-1. **ASR**：云 ASR API（可插拔 provider：OpenAI Whisper / Deepgram / 火山）
-2. **构建**：GitHub Actions macOS runner（Windows 无法编 iOS）
-3. **UI**：按规格重写 RN 页面（原 bundle 是字节码，无法直接移植 JS 逻辑）
+原版是 RN + Hermes，但字节码无法复用，且这台开发机是 Windows（无 Xcode / CocoaPods）。
+纯 Swift + XcodeGen 可以**零第三方依赖**在云端一次编译成功，视觉效果由我们自己画到一致。
 
 ## 目录
 
 ```
-app/                 React Native 主工程（本地登录、历史、设置）
-ios/App/             App 外壳 + 原生桥（录音、ASR WebSocket）
-ios/Keyboard/        键盘扩展（mic 按钮 → 宿主 App 录音 → 回填文本）
-docs/                架构清点、原版文案表、逐屏规格
-.github/workflows/   macOS 云构建 → ipa
+ios/
+  project.yml              XcodeGen 工程定义（app + 键盘扩展两个 target）
+  App/                     主 App（引导 / 登录 / 记录 / 设置）
+  Keyboard/                键盘扩展（全键位 + 长按录音）
+  Shared/                  两端共用（配置、音频、ASR 客户端、本地账号、记录存储）
+  Resources/               Info.plist 与 entitlements（App Group）
+server/asr_gateway.py      ASR 网关（mock / openai / deepgram）
+docs/SPEC.md               逐屏规格采集清单
+docs/strings_original.txt  从原版包里抽出的 1232 条文案
 ```
 
-## 还需要你提供
+## 一次完整的动作链
 
-- GitHub 仓库（含 Actions 权限）或一个 PAT，用来跑 macOS 编译
-- 云 ASR 的 API key（先给一家即可，接口做成可切换）
+```
+用户在任意 App 的输入框
+  → 切到「语音听写」键盘
+  → 按住空格键（= 麦克风键）
+  → 键盘扩展开麦，16k PCM 经 WSS 上行
+  → 网关转 Deepgram/Whisper，partial 实时回显在键盘状态条
+  → 松手发 finish，服务端给 final
+  → textDocumentProxy.insertText 直接落字
+  → 同时写入 App Group 的 records.json（App 里能看到历史）
+```
+
+## 构建
+
+推到 `main` 或手动触发 `ios-build` workflow，产物是 artifact `Typeless-ipa`。
+
+本地（有 Mac 时）：
+
+```bash
+brew install xcodegen
+cd ios && xcodegen generate
+xcodebuild -project Typeless.xcodeproj -scheme Typeless -sdk iphoneos -configuration Release CODE_SIGNING_ALLOWED=NO
+```
+
+## 安装（未签名 ipa）
+
+ipa 是 ad-hoc 签名（含 App Group entitlement），用 TrollStore / 自签工具安装。
+装完后需要三步才能真正用起来：设置里添加键盘 → 打开「允许完全访问」→ 允许麦克风。
+这跟原版完全一致，也是 `OnboardingView` 引导的内容。
+
+## 与原版的差异（必须承认）
+
+1. 识别引擎不同 → 准确率与延迟曲线不同
+2. 无云端账号 → 记录不跨设备同步
+3. 无订阅、无额度限制
+4. 灵动岛 Live Activity 尚未实现（二期）
+5. 中文文案为自写（原版中文由服务端运行时下发，包里没有原文）

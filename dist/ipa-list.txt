@@ -1,0 +1,20 @@
+Archive:  Typeless.ipa
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  11-21-2026 07:40   Payload/
+        0  11-21-2026 07:40   Payload/Typeless.app/
+        0  11-21-2026 07:40   Payload/Typeless.app/_CodeSignature/
+     3159  11-21-2026 07:40   Payload/Typeless.app/_CodeSignature/CodeResources
+        0  11-21-2026 07:40   Payload/Typeless.app/PlugIns/
+        0  11-21-2026 07:40   Payload/Typeless.app/PlugIns/TypelessKeyboard.appex/
+        0  11-21-2026 07:40   Payload/Typeless.app/PlugIns/TypelessKeyboard.appex/_CodeSignature/
+     1798  11-21-2026 07:40   Payload/Typeless.app/PlugIns/TypelessKeyboard.appex/_CodeSignature/CodeResources
+   393472  11-21-2026 07:40   Payload/Typeless.app/PlugIns/TypelessKeyboard.appex/TypelessKeyboard
+     1120  11-21-2026 07:40   Payload/Typeless.app/PlugIns/TypelessKeyboard.appex/Info.plist
+    14023  11-21-2026 07:40   Payload/Typeless.app/AppIcon60x60@2x.png
+   797056  11-21-2026 07:40   Payload/Typeless.app/Typeless
+   483192  11-21-2026 07:40   Payload/Typeless.app/Assets.car
+     1270  11-21-2026 07:40   Payload/Typeless.app/Info.plist
+        8  11-21-2026 07:40   Payload/Typeless.app/PkgInfo
+---------                     -------
+  1695098                     15 files

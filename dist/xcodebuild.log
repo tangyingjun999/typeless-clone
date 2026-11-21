@@ -1,0 +1,1002 @@
+Command line invocation:
+    /Applications/Xcode_27.1.app/Contents/Developer/usr/bin/xcodebuild -project Typeless.xcodeproj -scheme Typeless -configuration Release -sdk iphoneos -derivedDataPath build ONLY_ACTIVE_ARCH=NO CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY= build
+
+Build settings from command line:
+    CODE_SIGN_IDENTITY = 
+    CODE_SIGNING_ALLOWED = NO
+    CODE_SIGNING_REQUIRED = NO
+    ONLY_ACTIVE_ARCH = NO
+    SDKROOT = iphoneos27.1
+
+--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+{ platform:iOS, id:dvtdevice-DVTiPhonePlaceholder-iphoneos:placeholder, name:Any iOS Device }
+{ platform:macOS, arch:arm64, variant:Designed for [iPad,iPhone], id:aeaa09e2a799b83f92cc42f8cd68522914e7bd6f, name:My Mac }
+{ platform:iOS Simulator, id:dvtdevice-DVTiOSDeviceSimulatorPlaceholder-iphonesimulator:placeholder, name:Any iOS Simulator Device }
+{ platform:visionOS Simulator, arch:arm64, variant:Designed for [iPad,iPhone], id:D5A34E37-AA68-44E2-89EA-0F9AEA7732E8, OS:27.0, name:Apple Vision Pro }
+{ platform:visionOS Simulator, arch:arm64, variant:Designed for [iPad,iPhone], id:46E7C796-CFD9-4011-B284-E67F4C519820, OS:27.2, name:Apple Vision Pro }
+{ platform:iOS Simulator, arch:arm64, id:5D837EC4-DFCA-462C-9CBD-997BFF1A2E68, OS:27.0, name:iPad (A16) }
+{ platform:iOS Simulator, arch:arm64, id:1606AE1D-D9DA-4E44-A5D2-FD7DDE1C8DE0, OS:27.2, name:iPad (A16) }
+{ platform:iOS Simulator, arch:arm64, id:ABFA6AF8-EFEF-4CD6-8453-AEAB10014F8F, OS:27.0, name:iPad Air 11-inch (M4) }
+{ platform:iOS Simulator, arch:arm64, id:E3CC0D75-9911-40E7-8F16-FD5D98ADF2CA, OS:27.2, name:iPad Air 11-inch (M4) }
+{ platform:iOS Simulator, arch:arm64, id:0F13E1BE-0D17-4557-B1DB-47542A309DB6, OS:27.0, name:iPad Air 13-inch (M4) }
+{ platform:iOS Simulator, arch:arm64, id:9BD82FC8-9E98-42CA-B1F2-620B52BA9646, OS:27.2, name:iPad Air 13-inch (M4) }
+{ platform:iOS Simulator, arch:arm64, id:FFC11C89-1A17-4EBB-B986-ADE2E09FA1AF, OS:27.0, name:iPad Pro 11-inch (M5) }
+{ platform:iOS Simulator, arch:arm64, id:6582E97C-8AA0-4F7B-8337-A78B20700767, OS:27.2, name:iPad Pro 11-inch (M5) }
+{ platform:iOS Simulator, arch:arm64, id:E247944A-EF3A-4ACA-99BF-97F59D694F71, OS:27.0, name:iPad Pro 13-inch (M5) }
+{ platform:iOS Simulator, arch:arm64, id:D03256B1-4569-435F-8D92-E2BDD4ED7058, OS:27.2, name:iPad Pro 13-inch (M5) }
+{ platform:iOS Simulator, arch:arm64, id:8721CBAE-E1E6-4BFA-A804-29B2DB933F58, OS:27.0, name:iPad mini (A17 Pro) }
+{ platform:iOS Simulator, arch:arm64, id:4DF1AA75-A2F8-4E1A-AF15-154F8671CBBC, OS:27.2, name:iPad mini (A20 Pro) }
+{ platform:iOS Simulator, arch:arm64, id:24E299B4-C77B-4426-AC2B-71243825F07C, OS:27.0, name:iPhone 17 }
+{ platform:iOS Simulator, arch:arm64, id:4AD2086B-7B8F-4608-A742-AA422A0B8D74, OS:27.2, name:iPhone 17 }
+{ platform:iOS Simulator, arch:arm64, id:0AC25E88-57C5-486B-A20F-84D7A683A99D, OS:27.0, name:iPhone 17e }
+{ platform:iOS Simulator, arch:arm64, id:CD90C719-F4A8-40D6-9AC3-51BE522C2705, OS:27.2, name:iPhone 17e }
+{ platform:iOS Simulator, arch:arm64, id:0A1B5EC5-2485-4F8E-B06B-1185D8E186C0, OS:27.0, name:iPhone 18 Pro }
+{ platform:iOS Simulator, arch:arm64, id:A8CE73D2-F54C-4FB2-B688-BC6BD7612FA8, OS:27.2, name:iPhone 18 Pro }
+{ platform:iOS Simulator, arch:arm64, id:0893739A-31DF-4ADD-AAD3-12D877638876, OS:27.0, name:iPhone 18 Pro Max }
+{ platform:iOS Simulator, arch:arm64, id:CAD4F983-CE4C-41E7-84A5-DFFD6F0CF3CA, OS:27.2, name:iPhone 18 Pro Max }
+{ platform:iOS Simulator, arch:arm64, id:560C2889-F06A-4CE6-B330-A73499F3C513, OS:27.0, name:iPhone Air }
+{ platform:iOS Simulator, arch:arm64, id:92FA1CA9-EA61-434B-AACA-0A76FE5ECBD4, OS:27.2, name:iPhone Air }
+{ platform:iOS Simulator, arch:arm64, id:09693AE6-5842-4CF5-B801-D905E896271E, OS:27.1, name:iPhone Duo }
+{ platform:iOS Simulator, arch:arm64, id:C898E3E4-5033-4085-B886-963EE2D0C478, OS:27.2, name:iPhone Duo }
+note: Using codesigning identity override: 
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (2 targets)
+    Target 'Typeless' in project 'Typeless'
+        ➜ Explicit dependency on target 'TypelessKeyboard' in project 'Typeless'
+    Target 'TypelessKeyboard' in project 'Typeless' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode_27.1.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/runner/work/typeless-clone/typeless-clone/ios/Resources/Assets.xcassets
+
+ExecuteExternalTool /Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode_27.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS27.1.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+ExecuteExternalTool /Applications/Xcode_27.1.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+Build description signature: 15f6a1c935b7b6ce2e40ebe190ccbdf0
+Build description path: /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/XCBuildData/15f6a1c935b7b6ce2e40ebe190ccbdf0.xcbuilddata
+CreateBuildDirectory /Users/runner/work/typeless-clone/typeless-clone/ios/build/ModuleCache.noindex
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios/Typeless.xcodeproj
+    builtin-create-build-directory /Users/runner/work/typeless-clone/typeless-clone/ios/build/ModuleCache.noindex
+
+CreateBuildDirectory /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios/Typeless.xcodeproj
+    builtin-create-build-directory /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules
+
+CreateBuildDirectory /Users/runner/work/typeless-clone/typeless-clone/ios/build/CompilationCache.noindex
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios/Typeless.xcodeproj
+    builtin-create-build-directory /Users/runner/work/typeless-clone/typeless-clone/ios/build/CompilationCache.noindex
+
+CreateBuildDirectory /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios/Typeless.xcodeproj
+    builtin-create-build-directory /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products
+
+CreateBuildDirectory /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios/Typeless.xcodeproj
+    builtin-create-build-directory /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex
+
+ClangStatCache /Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_27.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS27.1.sdk /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKStatCaches.noindex/iphoneos27.1-24A94232-e829b21a6f8c9b70876ba0858053c0442866d66f27be705873c55a4609c58824.sdkstatcache
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios/Typeless.xcodeproj
+    /Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_27.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS27.1.sdk -o /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKStatCaches.noindex/iphoneos27.1-24A94232-e829b21a6f8c9b70876ba0858053c0442866d66f27be705873c55a4609c58824.sdkstatcache
+
+CreateBuildDirectory /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios/Typeless.xcodeproj
+    builtin-create-build-directory /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos
+
+WriteAuxiliaryFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless-1dbec1c9c53c9b65353e6155757c0158-VFS-iphoneos/all-product-headers.yaml
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios/Typeless.xcodeproj
+    write-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless-1dbec1c9c53c9b65353e6155757c0158-VFS-iphoneos/all-product-headers.yaml
+
+CreateBuildDirectory /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios/Typeless.xcodeproj
+    builtin-create-build-directory /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+CreateBuildDirectory /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/PrecompiledHeaders
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios/Typeless.xcodeproj
+    builtin-create-build-directory /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/PrecompiledHeaders
+
+CreateBuildDirectory /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/ExplicitPrecompiledModules
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios/Typeless.xcodeproj
+    builtin-create-build-directory /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+CreateBuildDirectory /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/EagerLinkingTBDs/Release-iphoneos
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios/Typeless.xcodeproj
+    builtin-create-build-directory /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/EagerLinkingTBDs/Release-iphoneos
+
+WriteAuxiliaryFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard.DependencyStaticMetadataFileList (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    write-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard.hmap (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    write-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard.hmap
+
+WriteAuxiliaryFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard.DependencyMetadataFileList (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    write-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard.DependencyMetadataFileList
+
+WriteAuxiliaryFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard-project-headers.hmap (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    write-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard-project-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard-own-target-headers.hmap (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    write-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard-own-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard-generated-files.hmap (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    write-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard-generated-files.hmap
+
+WriteAuxiliaryFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard-all-target-headers.hmap (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    write-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard-all-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard-all-non-framework-target-headers.hmap (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    write-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard.SwiftFileList (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    write-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard.SwiftFileList
+
+WriteAuxiliaryFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard_const_extract_protocols.json (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    write-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard_const_extract_protocols.json
+
+WriteAuxiliaryFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard.SwiftConstValuesFileList (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    write-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard.LinkFileList (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    write-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard.LinkFileList
+
+WriteAuxiliaryFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard-OutputFileMap.json (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    write-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard-OutputFileMap.json
+
+WriteAuxiliaryFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless.hmap (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    write-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless.hmap
+
+WriteAuxiliaryFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless.DependencyStaticMetadataFileList (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    write-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless.DependencyMetadataFileList (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    write-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless.DependencyMetadataFileList
+
+WriteAuxiliaryFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless-project-headers.hmap (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    write-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless-project-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless-own-target-headers.hmap (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    write-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless-own-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless-generated-files.hmap (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    write-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless-generated-files.hmap
+
+WriteAuxiliaryFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless-all-target-headers.hmap (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    write-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless-all-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless-all-non-framework-target-headers.hmap (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    write-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless_const_extract_protocols.json (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    write-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless_const_extract_protocols.json
+
+WriteAuxiliaryFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless.SwiftFileList (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    write-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless.SwiftFileList
+
+WriteAuxiliaryFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless.SwiftConstValuesFileList (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    write-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless.LinkFileList (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    write-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless.LinkFileList
+
+WriteAuxiliaryFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless-OutputFileMap.json (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    write-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless-OutputFileMap.json
+
+MkDir /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.appex (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    /bin/mkdir -p /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.appex
+
+MkDir /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    /bin/mkdir -p /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app
+
+MkDir /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app/PlugIns (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    /bin/mkdir -p /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app/PlugIns
+
+ProcessInfoPlistFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.appex/Info.plist /Users/runner/work/typeless-clone/typeless-clone/ios/Resources/Keyboard-Info.plist (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-infoPlistUtility /Users/runner/work/typeless-clone/typeless-clone/ios/Resources/Keyboard-Info.plist -producttype com.apple.product-type.app-extension -expandbuildsettings -format binary -platform iphoneos -requiredArchitecture arm64 -o /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.appex/Info.plist
+
+SwiftDriver TypelessKeyboard normal arm64 com.apple.xcode.tools.swift.compiler (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-SwiftDriver -- /Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name TypelessKeyboard -O @/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard.SwiftFileList -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_27.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS27.1.sdk -target arm64-apple-ios16.1 -g -module-cache-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/ModuleCache.noindex -Xfrontend -serialize-debugging-options -application-extension -swift-version 5 -I /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos -F /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKStatCaches.noindex/iphoneos27.1-24A94232-e829b21a6f8c9b70876ba0858053c0442866d66f27be705873c55a4609c58824.sdkstatcache -output-file-map /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -emit-const-values -const-gather-protocols-list /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard-generated-files.hmap -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard-own-target-headers.hmap -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard-project-headers.hmap -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/include -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard-Swift.h -working-directory /Users/runner/work/typeless-clone/typeless-clone/ios -experimental-emit-module-separately -disable-cmo
+2026-11-21 07:40:00.770 xcodebuild[9255:29417] [MT] DVTAssertions: Warning in DVTiOSFrameworks/IDEiOSSupportCore/DVTiPhoneSimulator.m:661
+Details:  SimDevice native architecture is nil. Device: SimDevice : Apple TV 4K (3rd generation) (AA1A4436-9426-4301-8D39-5E909CAF9C42) : state={ Shutdown } deviceType={ com.apple.CoreSimulator.SimDeviceType.Apple-TV-4K-3rd-generation-4K: SimDeviceType : Apple TV 4K (3rd generation) (com.apple.CoreSimulator.SimDeviceType.Apple-TV-4K-3rd-generation-4K) } runtime={ com.apple.CoreSimulator.SimRuntime.tvOS-27-0: (null) }, supportedArches: (
+)
+Object:   <DVTiPhoneSimulator: 0x78d60ebe00>
+Method:   -nativeArchitecture
+Thread:   <_NSMainThread: 0x100b70de0>{number = 1, name = main}
+Please file a bug at https://feedbackassistant.apple.com with this warning message and any useful information you can provide.
+2026-11-21 07:40:00.777 xcodebuild[9255:29417] [MT] DVTAssertions: Warning in DVTiOSFrameworks/IDEiOSSupportCore/DVTiPhoneSimulator.m:661
+Details:  SimDevice native architecture is nil. Device: SimDevice : Apple TV 4K (3rd generation) (at 1080p) (B9E4D366-604B-4F2F-8C77-5D95AD648816) : state={ Shutdown } deviceType={ com.apple.CoreSimulator.SimDeviceType.Apple-TV-4K-3rd-generation-1080p: SimDeviceType : Apple TV 4K (3rd generation) (at 1080p) (com.apple.CoreSimulator.SimDeviceType.Apple-TV-4K-3rd-generation-1080p) } runtime={ com.apple.CoreSimulator.SimRuntime.tvOS-27-0: (null) }, supportedArches: (
+)
+Object:   <DVTiPhoneSimulator: 0x78d69a7800>
+Method:   -nativeArchitecture
+Thread:   <_NSMainThread: 0x100b70de0>{number = 1, name = main}
+Please file a bug at https://feedbackassistant.apple.com with this warning message and any useful information you can provide.
+2026-11-21 07:40:00.784 xcodebuild[9255:29417] [MT] DVTAssertions: Warning in DVTiOSFrameworks/IDEiOSSupportCore/DVTiPhoneSimulator.m:661
+Details:  SimDevice native architecture is nil. Device: SimDevice : Apple TV 4K (3rd generation) (AA1A4436-9426-4301-8D39-5E909CAF9C42) : state={ Shutdown } deviceType={ com.apple.CoreSimulator.SimDeviceType.Apple-TV-4K-3rd-generation-4K: SimDeviceType : Apple TV 4K (3rd generation) (com.apple.CoreSimulator.SimDeviceType.Apple-TV-4K-3rd-generation-4K) } runtime={ com.apple.CoreSimulator.SimRuntime.tvOS-27-0: (null) }, supportedArches: (
+)
+Object:   <DVTiPhoneSimulator: 0x78d60ebe00>
+Method:   -nativeArchitecture
+Thread:   <_NSMainThread: 0x100b70de0>{number = 1, name = main}
+Please file a bug at https://feedbackassistant.apple.com with this warning message and any useful information you can provide.
+2026-11-21 07:40:00.785 xcodebuild[9255:29417] [MT] DVTAssertions: Warning in DVTiOSFrameworks/IDEiOSSupportCore/DVTiPhoneSimulator.m:661
+Details:  SimDevice native architecture is nil. Device: SimDevice : Apple TV 4K (3rd generation) (AA1A4436-9426-4301-8D39-5E909CAF9C42) : state={ Shutdown } deviceType={ com.apple.CoreSimulator.SimDeviceType.Apple-TV-4K-3rd-generation-4K: SimDeviceType : Apple TV 4K (3rd generation) (com.apple.CoreSimulator.SimDeviceType.Apple-TV-4K-3rd-generation-4K) } runtime={ com.apple.CoreSimulator.SimRuntime.tvOS-27-0: (null) }, supportedArches: (
+)
+Object:   <DVTiPhoneSimulator: 0x78d60ebe00>
+Method:   -nativeArchitecture
+Thread:   <_NSMainThread: 0x100b70de0>{number = 1, name = main}
+Please file a bug at https://feedbackassistant.apple.com with this warning message and any useful information you can provide.
+2026-11-21 07:40:00.785 xcodebuild[9255:29417] [MT] DVTAssertions: Warning in DVTiOSFrameworks/IDEiOSSupportCore/DVTiPhoneSimulator.m:661
+Details:  SimDevice native architecture is nil. Device: SimDevice : Apple TV 4K (3rd generation) (at 1080p) (B9E4D366-604B-4F2F-8C77-5D95AD648816) : state={ Shutdown } deviceType={ com.apple.CoreSimulator.SimDeviceType.Apple-TV-4K-3rd-generation-1080p: SimDeviceType : Apple TV 4K (3rd generation) (at 1080p) (com.apple.CoreSimulator.SimDeviceType.Apple-TV-4K-3rd-generation-1080p) } runtime={ com.apple.CoreSimulator.SimRuntime.tvOS-27-0: (null) }, supportedArches: (
+)
+Object:   <DVTiPhoneSimulator: 0x78d69a7800>
+Method:   -nativeArchitecture
+Thread:   <_NSMainThread: 0x100b70de0>{number = 1, name = main}
+Please file a bug at https://feedbackassistant.apple.com with this warning message and any useful information you can provide.
+2026-11-21 07:40:00.785 xcodebuild[9255:29417] [MT] DVTAssertions: Warning in DVTiOSFrameworks/IDEiOSSupportCore/DVTiPhoneSimulator.m:661
+Details:  SimDevice native architecture is nil. Device: SimDevice : Apple TV 4K (3rd generation) (at 1080p) (B9E4D366-604B-4F2F-8C77-5D95AD648816) : state={ Shutdown } deviceType={ com.apple.CoreSimulator.SimDeviceType.Apple-TV-4K-3rd-generation-1080p: SimDeviceType : Apple TV 4K (3rd generation) (at 1080p) (com.apple.CoreSimulator.SimDeviceType.Apple-TV-4K-3rd-generation-1080p) } runtime={ com.apple.CoreSimulator.SimRuntime.tvOS-27-0: (null) }, supportedArches: (
+)
+Object:   <DVTiPhoneSimulator: 0x78d69a7800>
+Method:   -nativeArchitecture
+Thread:   <_NSMainThread: 0x100b70de0>{number = 1, name = main}
+Please file a bug at https://feedbackassistant.apple.com with this warning message and any useful information you can provide.
+2026-11-21 07:40:00.905 xcodebuild[9255:29417] [MT] DVTAssertions: Warning in DVTiOSFrameworks/IDEiOSSupportCore/DVTiPhoneSimulator.m:661
+Details:  SimDevice native architecture is nil. Device: SimDevice : Apple TV 4K (3rd generation) (AA1A4436-9426-4301-8D39-5E909CAF9C42) : state={ Shutdown } deviceType={ com.apple.CoreSimulator.SimDeviceType.Apple-TV-4K-3rd-generation-4K: SimDeviceType : Apple TV 4K (3rd generation) (com.apple.CoreSimulator.SimDeviceType.Apple-TV-4K-3rd-generation-4K) } runtime={ com.apple.CoreSimulator.SimRuntime.tvOS-27-0: (null) }, supportedArches: (
+)
+Object:   <DVTiPhoneSimulator: 0x78d60ebe00>
+Method:   -nativeArchitecture
+Thread:   <_NSMainThread: 0x100b70de0>{number = 1, name = main}
+Please file a bug at https://feedbackassistant.apple.com with this warning message and any useful information you can provide.
+2026-11-21 07:40:00.906 xcodebuild[9255:29417] [MT] DVTAssertions: Warning in DVTiOSFrameworks/IDEiOSSupportCore/DVTiPhoneSimulator.m:661
+Details:  SimDevice native architecture is nil. Device: SimDevice : Apple TV 4K (3rd generation) (AA1A4436-9426-4301-8D39-5E909CAF9C42) : state={ Shutdown } deviceType={ com.apple.CoreSimulator.SimDeviceType.Apple-TV-4K-3rd-generation-4K: SimDeviceType : Apple TV 4K (3rd generation) (com.apple.CoreSimulator.SimDeviceType.Apple-TV-4K-3rd-generation-4K) } runtime={ com.apple.CoreSimulator.SimRuntime.tvOS-27-0: (null) }, supportedArches: (
+)
+Object:   <DVTiPhoneSimulator: 0x78d60ebe00>
+Method:   -nativeArchitecture
+Thread:   <_NSMainThread: 0x100b70de0>{number = 1, name = main}
+Please file a bug at https://feedbackassistant.apple.com with this warning message and any useful information you can provide.
+2026-11-21 07:40:00.909 xcodebuild[9255:29417] [MT] DVTAssertions: Warning in DVTiOSFrameworks/IDEiOSSupportCore/DVTiPhoneSimulator.m:661
+Details:  SimDevice native architecture is nil. Device: SimDevice : Apple TV 4K (3rd generation) (at 1080p) (B9E4D366-604B-4F2F-8C77-5D95AD648816) : state={ Shutdown } deviceType={ com.apple.CoreSimulator.SimDeviceType.Apple-TV-4K-3rd-generation-1080p: SimDeviceType : Apple TV 4K (3rd generation) (at 1080p) (com.apple.CoreSimulator.SimDeviceType.Apple-TV-4K-3rd-generation-1080p) } runtime={ com.apple.CoreSimulator.SimRuntime.tvOS-27-0: (null) }, supportedArches: (
+)
+Object:   <DVTiPhoneSimulator: 0x78d69a7800>
+Method:   -nativeArchitecture
+Thread:   <_NSMainThread: 0x100b70de0>{number = 1, name = main}
+Please file a bug at https://feedbackassistant.apple.com with this warning message and any useful information you can provide.
+2026-11-21 07:40:00.910 xcodebuild[9255:29417] [MT] DVTAssertions: Warning in DVTiOSFrameworks/IDEiOSSupportCore/DVTiPhoneSimulator.m:661
+Details:  SimDevice native architecture is nil. Device: SimDevice : Apple TV 4K (3rd generation) (at 1080p) (B9E4D366-604B-4F2F-8C77-5D95AD648816) : state={ Shutdown } deviceType={ com.apple.CoreSimulator.SimDeviceType.Apple-TV-4K-3rd-generation-1080p: SimDeviceType : Apple TV 4K (3rd generation) (at 1080p) (com.apple.CoreSimulator.SimDeviceType.Apple-TV-4K-3rd-generation-1080p) } runtime={ com.apple.CoreSimulator.SimRuntime.tvOS-27-0: (null) }, supportedArches: (
+)
+Object:   <DVTiPhoneSimulator: 0x78d69a7800>
+Method:   -nativeArchitecture
+Thread:   <_NSMainThread: 0x100b70de0>{number = 1, name = main}
+Please file a bug at https://feedbackassistant.apple.com with this warning message and any useful information you can provide.
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/ptrcheck-EL4LWGA4R3Z8X727APFIGVUCP.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_Builtin_float-8DQ018SCYLF5LNWJBYF5AR2A6.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/SwiftShims-CFYAL2OSHFQMETGZ3JK1C62GB.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_Builtin_stdbool-42UKWXBYB3UU9LN0TEYGU48TG.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_Builtin_stddef-3Z7GYAZSE5Y7OHPE1OSG6AEFR.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_AvailabilityInternal-46FXHZCIPFCM49PTE5USORRF7.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/DeveloperToolsSupport-61YC8OG3F5A1BLMSV4EWYDHQ2.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_SwiftConcurrencyShims-B9M7M09RWLT1F0YMLQZXXVPNG.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/ptrauth-4NM01BFAVLV78ZOVYO70RTOWS.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_Builtin_stdarg-11TRN6XZM2KGKUGVWRRB9PXWN.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_DarwinFoundation1-ENEFS2X4NAJFYIL4ZGAX1Q1C8.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_DarwinFoundation2-1SP4DN6JKKVAACMF94B0G3NF7.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_Builtin_limits-CUR0H618CIT93IPIB3LCTYKWI.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_Builtin_stdint-6C81M9PRVDA3XCP7AQJNT2O1Y.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/string_h-17ORVYUFA3I1HT93ZHBLVVJNG.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_Builtin_tgmath-BQXPV87TKC7V147OW4FBQ2MHW.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/sys_types-CMVYXXB4YN45SAYVRXC1KDQJS.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_Builtin_stdatomic-B2WX1BDDI1U145I49N2D4QM2.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_DarwinFoundation3-CYZOPFL1KEDS6GWERZEUSDF6I.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_Builtin_intrinsics-BOCITJHW3LNLN80ELSOSNYDAF.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_Builtin_inttypes-48J7PL22D2OK0X3WGUNTUXXB9.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/Darwin-E5K3DE3THXDCB18UDH773FYQO.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/simd-94DBYAO9UGRT0NKEIA8OBCRP2.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/ObjectiveC-6YOQ49HS4FS5HBF0AXQZIYMGB.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/MachO-2UZQ65I7ZJA9AEXR1K40DZRYQ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/os_object-483ZKPI3YMM1YW96O50X1CTOA.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/os_workgroup-ECAMRINKJTXIDRBH1KZL9JYBR.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/Dispatch-1UCEQ2QUOIDYDAMBQU9E20D94.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/Spatial-5XWYRJGGJ0ROI80BSOUFR94P9.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/dnssd-EMFYOERLWX3RVJMEQ36HPFZZT.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/CoreFoundation-2UMZ3SH2MGEITNXDPGGN4YT24.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/XPC-10E8X3J4KQGOUDJA4GHJ5VJN1.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/os-YO1IEL1F5PBVAGLVSR4DZ6N6.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/Security-4ESLNUSLU727OBU9QSWCI3ZLJ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/CoreGraphics-1QHX4QBQ9Q6YCBI3CSLYOY01N.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/CoreAudioTypes-7VNDU4DBBYTX7XZ6EGIWUHOUL.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/CFNetwork-86BX7EH2M7N8RVJEXLZZNTPP7.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/CoreAudio-2IVHD886GOIZ41NEL5UOOUNLT.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/Foundation-DSX8I60A0ZCR66G89CVYR1Z9J.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/CoreText-DT182BF78OL9OX8NDYV3FMBV9.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/ImageIO-2F9NVHNUPNF2R3GD8CWET0E11.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/OSLog-46W24DGDJBF3DBFACU1ELPWHQ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/DataDetection-ARMP6C42SV87FH0KBKDPKK1Y.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/LocalAuthentication-2S33WGQSQV2YVHTJSP9D49354.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/UniformTypeIdentifiers-1800CXGEAUT4TL1O3SEPELG0H.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/UserNotifications-7Q2I4SHI1TLQZI5HA9R6EEG83.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/CoreTransferable-F1JLNWQOE68CI6608EFQQV93M.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/Accessibility-7X62AUP26THCCBZEQOQSLDZWQ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/CoreData-86ZIRXLXBOD62MPJRXH5H7UWV.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_LocationEssentials-5EA1MPDBS5HYV6PM9WMQZH5B2.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/Symbols-8M5L3G0BDVNYW0MHJWZG0ON8F.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/CoreLocation-I0C6ZFJWMHDOL0HSMSI1WLSA.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/CoreMIDI-5FJD92QB3QW34U93YUM5PQH18.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/Network-24GMVF33T1ET4D4CVX17L9AER.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/FileProvider-EZ7T0SLXJ6OOGOOVO3JQSTAAQ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/UIUtilities-9LHQ0TAHB7J3VRYUKR81JEXYU.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/AudioToolbox-E7KCILFKZ676KCNB0GDZ5AW6J.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/AVRouting-EDI1ZLI1PFFFSHT3FP0BMDTTJ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/IOSurface-ES7WBZYBFJYP4AAT0KZZ8SEX8.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/CoreMotion-38OTKG94A9J3XXC4KBYCC95TZ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/Metal-AC1L3DVYHL22ZIBW2N2SV9C0U.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/OpenGLES-9GRZNVR48LRC7GJ8H5ZBQPS97.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/CoreVideo-4BTSQMBY5W8LX7EZAP8TPR7HJ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/QuartzCore-BPEZDICLUPSZBXRR6TO8YAQDU.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/CoreMedia-EQCVRWC5KB6XV5J3GPXYTP9T.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/CoreImage-1LIRQQCELLSYPJX6BGZ4Y4MRQ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/SwiftUICore-9JRVGPGTTRJ5ZXG3POI60UXK6.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/AVFAudio-9ZAZIN8I749U1RZ23YP2T73TF.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/MediaToolbox-B54NZDBTYRB5ZJAWPCWOZJ09U.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/VideoToolbox-24T0YL2ZHS4OR5XFO4XWOWGX9.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/UIKit-2SSGKGDE4KEBUBK2PYMZL2VNM.pcm
+2026-11-21 07:40:12.665 xcodebuild[9255:29417] [MT] DVTAssertions: Warning in DVTiOSFrameworks/IDEiOSSupportCore/DVTiPhoneSimulator.m:661
+Details:  SimDevice native architecture is nil. Device: SimDevice : Apple Watch SE 3 (40mm) (59D98431-6DC6-4BA6-90DE-5EA5F59715D1) : state={ Shutdown } deviceType={ com.apple.CoreSimulator.SimDeviceType.Apple-Watch-SE-3-40mm: SimDeviceType : Apple Watch SE 3 (40mm) (com.apple.CoreSimulator.SimDeviceType.Apple-Watch-SE-3-40mm) } runtime={ com.apple.CoreSimulator.SimRuntime.watchOS-27-0: (null) }, supportedArches: (
+)
+Object:   <DVTiPhoneSimulator: 0x78d6224600>
+Method:   -nativeArchitecture
+Thread:   <_NSMainThread: 0x100b70de0>{number = 1, name = main}
+Please file a bug at https://feedbackassistant.apple.com with this warning message and any useful information you can provide.
+2026-11-21 07:40:12.665 xcodebuild[9255:29417] [MT] DVTAssertions: Warning in DVTiOSFrameworks/IDEiOSSupportCore/DVTiPhoneSimulator.m:661
+Details:  SimDevice native architecture is nil. Device: SimDevice : Apple Watch SE 3 (40mm) (59D98431-6DC6-4BA6-90DE-5EA5F59715D1) : state={ Shutdown } deviceType={ com.apple.CoreSimulator.SimDeviceType.Apple-Watch-SE-3-40mm: SimDeviceType : Apple Watch SE 3 (40mm) (com.apple.CoreSimulator.SimDeviceType.Apple-Watch-SE-3-40mm) } runtime={ com.apple.CoreSimulator.SimRuntime.watchOS-27-0: (null) }, supportedArches: (
+)
+Object:   <DVTiPhoneSimulator: 0x78d6224600>
+Method:   -nativeArchitecture
+Thread:   <_NSMainThread: 0x100b70de0>{number = 1, name = main}
+Please file a bug at https://feedbackassistant.apple.com with this warning message and any useful information you can provide.
+2026-11-21 07:40:12.665 xcodebuild[9255:29417] [MT] DVTAssertions: Warning in DVTiOSFrameworks/IDEiOSSupportCore/DVTiPhoneSimulator.m:661
+Details:  SimDevice native architecture is nil. Device: SimDevice : Apple Watch SE 3 (44mm) (9DC4C83D-BC52-420A-AAA0-35DBBCE62ECA) : state={ Shutdown } deviceType={ com.apple.CoreSimulator.SimDeviceType.Apple-Watch-SE-3-44mm: SimDeviceType : Apple Watch SE 3 (44mm) (com.apple.CoreSimulator.SimDeviceType.Apple-Watch-SE-3-44mm) } runtime={ com.apple.CoreSimulator.SimRuntime.watchOS-27-0: (null) }, supportedArches: (
+)
+Object:   <DVTiPhoneSimulator: 0x78d6224400>
+Method:   -nativeArchitecture
+Thread:   <_NSMainThread: 0x100b70de0>{number = 1, name = main}
+Please file a bug at https://feedbackassistant.apple.com with this warning message and any useful information you can provide.
+2026-11-21 07:40:12.665 xcodebuild[9255:29417] [MT] DVTAssertions: Warning in DVTiOSFrameworks/IDEiOSSupportCore/DVTiPhoneSimulator.m:661
+Details:  SimDevice native architecture is nil. Device: SimDevice : Apple Watch SE 3 (44mm) (9DC4C83D-BC52-420A-AAA0-35DBBCE62ECA) : state={ Shutdown } deviceType={ com.apple.CoreSimulator.SimDeviceType.Apple-Watch-SE-3-44mm: SimDeviceType : Apple Watch SE 3 (44mm) (com.apple.CoreSimulator.SimDeviceType.Apple-Watch-SE-3-44mm) } runtime={ com.apple.CoreSimulator.SimRuntime.watchOS-27-0: (null) }, supportedArches: (
+)
+Object:   <DVTiPhoneSimulator: 0x78d6224400>
+Method:   -nativeArchitecture
+Thread:   <_NSMainThread: 0x100b70de0>{number = 1, name = main}
+Please file a bug at https://feedbackassistant.apple.com with this warning message and any useful information you can provide.
+2026-11-21 07:40:12.666 xcodebuild[9255:29417] [MT] DVTAssertions: Warning in DVTiOSFrameworks/IDEiOSSupportCore/DVTiPhoneSimulator.m:661
+Details:  SimDevice native architecture is nil. Device: SimDevice : Apple Watch Series 12 (42mm) (0F2F315B-5869-49D4-A5C9-42A5585869D7) : state={ Shutdown } deviceType={ com.apple.CoreSimulator.SimDeviceType.Apple-Watch-Series-12-42mm: SimDeviceType : Apple Watch Series 12 (42mm) (com.apple.CoreSimulator.SimDeviceType.Apple-Watch-Series-12-42mm) } runtime={ com.apple.CoreSimulator.SimRuntime.watchOS-27-0: (null) }, supportedArches: (
+)
+Object:   <DVTiPhoneSimulator: 0x78d6224000>
+Method:   -nativeArchitecture
+Thread:   <_NSMainThread: 0x100b70de0>{number = 1, name = main}
+Please file a bug at https://feedbackassistant.apple.com with this warning message and any useful information you can provide.
+2026-11-21 07:40:12.666 xcodebuild[9255:29417] [MT] DVTAssertions: Warning in DVTiOSFrameworks/IDEiOSSupportCore/DVTiPhoneSimulator.m:661
+Details:  SimDevice native architecture is nil. Device: SimDevice : Apple Watch Series 12 (42mm) (0F2F315B-5869-49D4-A5C9-42A5585869D7) : state={ Shutdown } deviceType={ com.apple.CoreSimulator.SimDeviceType.Apple-Watch-Series-12-42mm: SimDeviceType : Apple Watch Series 12 (42mm) (com.apple.CoreSimulator.SimDeviceType.Apple-Watch-Series-12-42mm) } runtime={ com.apple.CoreSimulator.SimRuntime.watchOS-27-0: (null) }, supportedArches: (
+)
+Object:   <DVTiPhoneSimulator: 0x78d6224000>
+Method:   -nativeArchitecture
+Thread:   <_NSMainThread: 0x100b70de0>{number = 1, name = main}
+Please file a bug at https://feedbackassistant.apple.com with this warning message and any useful information you can provide.
+2026-11-21 07:40:12.667 xcodebuild[9255:29417] [MT] DVTAssertions: Warning in DVTiOSFrameworks/IDEiOSSupportCore/DVTiPhoneSimulator.m:661
+Details:  SimDevice native architecture is nil. Device: SimDevice : Apple Watch Series 12 (46mm) (CD8A490F-5B2C-485E-8F11-CD8596FA4AAE) : state={ Shutdown } deviceType={ com.apple.CoreSimulator.SimDeviceType.Apple-Watch-Series-12-46mm: SimDeviceType : Apple Watch Series 12 (46mm) (com.apple.CoreSimulator.SimDeviceType.Apple-Watch-Series-12-46mm) } runtime={ com.apple.CoreSimulator.SimRuntime.watchOS-27-0: (null) }, supportedArches: (
+)
+Object:   <DVTiPhoneSimulator: 0x78d69a7e00>
+Method:   -nativeArchitecture
+Thread:   <_NSMainThread: 0x100b70de0>{number = 1, name = main}
+Please file a bug at https://feedbackassistant.apple.com with this warning message and any useful information you can provide.
+2026-11-21 07:40:12.667 xcodebuild[9255:29417] [MT] DVTAssertions: Warning in DVTiOSFrameworks/IDEiOSSupportCore/DVTiPhoneSimulator.m:661
+Details:  SimDevice native architecture is nil. Device: SimDevice : Apple Watch Series 12 (46mm) (CD8A490F-5B2C-485E-8F11-CD8596FA4AAE) : state={ Shutdown } deviceType={ com.apple.CoreSimulator.SimDeviceType.Apple-Watch-Series-12-46mm: SimDeviceType : Apple Watch Series 12 (46mm) (com.apple.CoreSimulator.SimDeviceType.Apple-Watch-Series-12-46mm) } runtime={ com.apple.CoreSimulator.SimRuntime.watchOS-27-0: (null) }, supportedArches: (
+)
+Object:   <DVTiPhoneSimulator: 0x78d69a7e00>
+Method:   -nativeArchitecture
+Thread:   <_NSMainThread: 0x100b70de0>{number = 1, name = main}
+Please file a bug at https://feedbackassistant.apple.com with this warning message and any useful information you can provide.
+2026-11-21 07:40:12.667 xcodebuild[9255:29417] [MT] DVTAssertions: Warning in DVTiOSFrameworks/IDEiOSSupportCore/DVTiPhoneSimulator.m:661
+Details:  SimDevice native architecture is nil. Device: SimDevice : Apple Watch Ultra 4 (49mm) (BCB3C139-0F79-47D8-BCF2-5D39AA0D1C00) : state={ Shutdown } deviceType={ com.apple.CoreSimulator.SimDeviceType.Apple-Watch-Ultra-4-49mm: SimDeviceType : Apple Watch Ultra 4 (49mm) (com.apple.CoreSimulator.SimDeviceType.Apple-Watch-Ultra-4-49mm) } runtime={ com.apple.CoreSimulator.SimRuntime.watchOS-27-0: (null) }, supportedArches: (
+)
+Object:   <DVTiPhoneSimulator: 0x78d6224200>
+Method:   -nativeArchitecture
+Thread:   <_NSMainThread: 0x100b70de0>{number = 1, name = main}
+Please file a bug at https://feedbackassistant.apple.com with this warning message and any useful information you can provide.
+2026-11-21 07:40:12.668 xcodebuild[9255:29417] [MT] DVTAssertions: Warning in DVTiOSFrameworks/IDEiOSSupportCore/DVTiPhoneSimulator.m:661
+Details:  SimDevice native architecture is nil. Device: SimDevice : Apple Watch Ultra 4 (49mm) (BCB3C139-0F79-47D8-BCF2-5D39AA0D1C00) : state={ Shutdown } deviceType={ com.apple.CoreSimulator.SimDeviceType.Apple-Watch-Ultra-4-49mm: SimDeviceType : Apple Watch Ultra 4 (49mm) (com.apple.CoreSimulator.SimDeviceType.Apple-Watch-Ultra-4-49mm) } runtime={ com.apple.CoreSimulator.SimRuntime.watchOS-27-0: (null) }, supportedArches: (
+)
+Object:   <DVTiPhoneSimulator: 0x78d6224200>
+Method:   -nativeArchitecture
+Thread:   <_NSMainThread: 0x100b70de0>{number = 1, name = main}
+Please file a bug at https://feedbackassistant.apple.com with this warning message and any useful information you can provide.
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/AVFoundation-7T87YITBNINQFNZA2BKCCOXJN.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/SwiftUI-7M8K727RN561D6NQERNPKFQG9.pcm
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ TypelessKeyboard (in target 'TypelessKeyboard' from project 'Typeless')
+
+SwiftCompile normal arm64 (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    
+
+SwiftCompile normal arm64 Compiling\ ASRClient.swift,\ AudioCapture.swift,\ Config.swift /Users/runner/work/typeless-clone/typeless-clone/ios/Shared/ASRClient.swift /Users/runner/work/typeless-clone/typeless-clone/ios/Shared/AudioCapture.swift /Users/runner/work/typeless-clone/typeless-clone/ios/Shared/Config.swift (in target 'TypelessKeyboard' from project 'Typeless')
+
+SwiftCompile normal arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/Shared/ASRClient.swift (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-SwiftPerFileCompile ASRClient.swift
+
+SwiftCompile normal arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/Shared/AudioCapture.swift (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-SwiftPerFileCompile AudioCapture.swift
+
+SwiftCompile normal arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/Shared/Config.swift (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-SwiftPerFileCompile Config.swift
+
+/Users/runner/work/typeless-clone/typeless-clone/ios/Shared/AudioCapture.swift:20:99: warning: 'allowBluetooth' was deprecated in iOS 8.0: renamed to 'AVAudioSession.CategoryOptions.allowBluetoothHFP' [#DeprecatedDeclaration]
+18 |     func start() throws {
+19 |         let session = AVAudioSession.sharedInstance()
+20 |         try session.setCategory(.playAndRecord, mode: .measurement, options: [.defaultToSpeaker, .allowBluetooth])
+   |                                                                                                   |- warning: 'allowBluetooth' was deprecated in iOS 8.0: renamed to 'AVAudioSession.CategoryOptions.allowBluetoothHFP' [#DeprecatedDeclaration]
+   |                                                                                                   `- note: use 'AVAudioSession.CategoryOptions.allowBluetoothHFP' instead
+21 |         try session.setActive(true, options: [])
+22 | 
+
+[#DeprecatedDeclaration]: <https://docs.swift.org/compiler/documentation/diagnostics/deprecated-declaration>
+SwiftCompile normal arm64 Compiling\ KeyboardView.swift,\ KeyboardViewController.swift,\ LocalAuth.swift /Users/runner/work/typeless-clone/typeless-clone/ios/Keyboard/KeyboardView.swift /Users/runner/work/typeless-clone/typeless-clone/ios/Keyboard/KeyboardViewController.swift /Users/runner/work/typeless-clone/typeless-clone/ios/Shared/LocalAuth.swift (in target 'TypelessKeyboard' from project 'Typeless')
+
+SwiftCompile normal arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/Keyboard/KeyboardView.swift (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-SwiftPerFileCompile KeyboardView.swift
+
+SwiftCompile normal arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/Keyboard/KeyboardViewController.swift (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-SwiftPerFileCompile KeyboardViewController.swift
+
+SwiftCompile normal arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/Shared/LocalAuth.swift (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-SwiftPerFileCompile LocalAuth.swift
+
+SwiftCompile normal arm64 Compiling\ Store.swift,\ Theme.swift /Users/runner/work/typeless-clone/typeless-clone/ios/Shared/Store.swift /Users/runner/work/typeless-clone/typeless-clone/ios/Shared/Theme.swift (in target 'TypelessKeyboard' from project 'Typeless')
+
+SwiftCompile normal arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/Shared/Store.swift (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-SwiftPerFileCompile Store.swift
+
+SwiftCompile normal arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/Shared/Theme.swift (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-SwiftPerFileCompile Theme.swift
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for TypelessKeyboard (in target 'TypelessKeyboard' from project 'Typeless')
+
+SwiftDriver\ Compilation\ Requirements TypelessKeyboard normal arm64 com.apple.xcode.tools.swift.compiler (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name TypelessKeyboard -O @/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard.SwiftFileList -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_27.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS27.1.sdk -target arm64-apple-ios16.1 -g -module-cache-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/ModuleCache.noindex -Xfrontend -serialize-debugging-options -application-extension -swift-version 5 -I /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos -F /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKStatCaches.noindex/iphoneos27.1-24A94232-e829b21a6f8c9b70876ba0858053c0442866d66f27be705873c55a4609c58824.sdkstatcache -output-file-map /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -emit-const-values -const-gather-protocols-list /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard-generated-files.hmap -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard-own-target-headers.hmap -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard-project-headers.hmap -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/include -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard-Swift.h -working-directory /Users/runner/work/typeless-clone/typeless-clone/ios -experimental-emit-module-separately -disable-cmo
+
+SwiftDriverJobDiscovery normal arm64 Compiling Store.swift, Theme.swift (in target 'TypelessKeyboard' from project 'Typeless')
+
+SwiftMergeGeneratedHeaders /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/DerivedSources/TypelessKeyboard-Swift.h /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard-Swift.h (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-swiftHeaderTool -arch arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard-Swift.h -o /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/DerivedSources/TypelessKeyboard-Swift.h
+
+Copy /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.swiftmodule/arm64-apple-ios.swiftmodule /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard.swiftmodule (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard.swiftmodule /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.swiftmodule/arm64-apple-ios.swiftmodule
+
+Copy /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.swiftmodule/arm64-apple-ios.swiftdoc /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard.swiftdoc (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard.swiftdoc /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.swiftmodule/arm64-apple-ios.swiftdoc
+
+Copy /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.swiftmodule/arm64-apple-ios.abi.json /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard.abi.json (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard.abi.json /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.swiftmodule/arm64-apple-ios.abi.json
+
+Copy /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard.swiftsourceinfo (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard.swiftsourceinfo /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo
+
+MkDir /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/assetcatalog_output/unthinned (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    /bin/mkdir -p /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/assetcatalog_output/unthinned
+
+MkDir /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/assetcatalog_output/thinned (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    /bin/mkdir -p /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/assetcatalog_output/thinned
+
+GenerateAssetSymbols /Users/runner/work/typeless-clone/typeless-clone/ios/Resources/Assets.xcassets (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    /Applications/Xcode_27.1.app/Contents/Developer/usr/bin/actool /Users/runner/work/typeless-clone/typeless-clone/ios/Resources/Assets.xcassets --compile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app --output-format human-readable-text --notices --warnings --export-dependency-info /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/assetcatalog_dependencies --output-partial-info-plist /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/assetcatalog_generated_info.plist --app-icon AppIcon --compress-pngs --enable-on-demand-resources YES --development-region en --target-device iphone --minimum-deployment-target 16.1 --platform iphoneos --bundle-identifier com.tlb.speech --generate-swift-asset-symbol-extensions NO --generate-swift-asset-symbols /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/DerivedSources/GeneratedAssetSymbols.swift --generate-objc-asset-symbols /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/DerivedSources/GeneratedAssetSymbols.h --generate-asset-symbol-index /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/DerivedSources/GeneratedAssetSymbols-Index.plist
+/* com.apple.actool.compilation-results */
+/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/DerivedSources/GeneratedAssetSymbols-Index.plist
+/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/DerivedSources/GeneratedAssetSymbols.h
+/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/DerivedSources/GeneratedAssetSymbols.swift
+
+
+CompileAssetCatalogVariant thinned /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app /Users/runner/work/typeless-clone/typeless-clone/ios/Resources/Assets.xcassets (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    /Applications/Xcode_27.1.app/Contents/Developer/usr/bin/actool /Users/runner/work/typeless-clone/typeless-clone/ios/Resources/Assets.xcassets --compile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/assetcatalog_output/thinned --output-format human-readable-text --notices --warnings --export-dependency-info /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/assetcatalog_dependencies_thinned --output-partial-info-plist /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/assetcatalog_generated_info.plist_thinned --app-icon AppIcon --compress-pngs --enable-on-demand-resources YES --development-region en --target-device iphone --minimum-deployment-target 16.1 --platform iphoneos
+/* com.apple.actool.compilation-results */
+/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/assetcatalog_generated_info.plist_thinned
+/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/assetcatalog_output/thinned/AppIcon60x60@2x.png
+/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/assetcatalog_output/thinned/Assets.car
+
+
+SwiftDriverJobDiscovery normal arm64 Compiling ASRClient.swift, AudioCapture.swift, Config.swift (in target 'TypelessKeyboard' from project 'Typeless')
+
+SwiftDriver Typeless normal arm64 com.apple.xcode.tools.swift.compiler (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-SwiftDriver -- /Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Typeless -O @/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless.SwiftFileList -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_27.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS27.1.sdk -target arm64-apple-ios16.1 -g -module-cache-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/ModuleCache.noindex -Xfrontend -serialize-debugging-options -swift-version 5 -I /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos -F /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKStatCaches.noindex/iphoneos27.1-24A94232-e829b21a6f8c9b70876ba0858053c0442866d66f27be705873c55a4609c58824.sdkstatcache -output-file-map /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -emit-const-values -const-gather-protocols-list /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless-generated-files.hmap -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless-own-target-headers.hmap -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless-project-headers.hmap -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/include -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless-Swift.h -working-directory /Users/runner/work/typeless-clone/typeless-clone/ios -experimental-emit-module-separately -disable-cmo
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_SwiftConcurrencyShims-6JJ3PDJLT7RLX6TWSIWV66W98.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/DeveloperToolsSupport-C2G8M746RION8I3BYGZGRIW4L.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_Builtin_stddef-HLVBXRYMJ23BUGR0KOX2FH0D.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/SwiftShims-21MYYVETJ72UZ1N3ELNXHS849.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_Builtin_stdbool-ERBHU7U8ABPINY9FZOTELNG0R.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/ptrcheck-EKLKGYV4JUZZH3S14FRVG6ARD.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_Builtin_float-ET1X163TWSAIQ2M07TOTGKL9K.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_Builtin_stdarg-6KCQ5SBKPC5XFYFXAYP02CMK1.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/ptrauth-5SIAR9TEC93ZGLSXTWU0O3J8G.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_AvailabilityInternal-C0YXFKF7ND6PDVLJ8P05A3BE.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_DarwinFoundation1-EXSXXHB361C0G1DJGJ97OYESQ.pcm
+
+LinkAssetCatalog /Users/runner/work/typeless-clone/typeless-clone/ios/Resources/Assets.xcassets (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-linkAssetCatalog --thinned /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/assetcatalog_output/thinned --thinned-dependencies /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/assetcatalog_dependencies_thinned --thinned-info-plist-content /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/assetcatalog_generated_info.plist_thinned --unthinned /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/assetcatalog_output/unthinned --unthinned-dependencies /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/assetcatalog_dependencies_unthinned --unthinned-info-plist-content /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/assetcatalog_generated_info.plist_unthinned --output /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app --plist-output /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/assetcatalog_generated_info.plist
+note: Emplaced /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app/AppIcon60x60@2x.png (in target 'Typeless' from project 'Typeless')
+note: Emplaced /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app/Assets.car (in target 'Typeless' from project 'Typeless')
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_DarwinFoundation2-ORM66HDE6K4AV55KKZ037J0K.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_Builtin_limits-F00AZ62E357OVJMOEX75D77BI.pcm
+
+SwiftDriverJobDiscovery normal arm64 Compiling KeyboardView.swift, KeyboardViewController.swift, LocalAuth.swift (in target 'TypelessKeyboard' from project 'Typeless')
+
+SwiftDriver\ Compilation TypelessKeyboard normal arm64 com.apple.xcode.tools.swift.compiler (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-Swift-Compilation -- /Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name TypelessKeyboard -O @/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard.SwiftFileList -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_27.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS27.1.sdk -target arm64-apple-ios16.1 -g -module-cache-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/ModuleCache.noindex -Xfrontend -serialize-debugging-options -application-extension -swift-version 5 -I /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos -F /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKStatCaches.noindex/iphoneos27.1-24A94232-e829b21a6f8c9b70876ba0858053c0442866d66f27be705873c55a4609c58824.sdkstatcache -output-file-map /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -emit-const-values -const-gather-protocols-list /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard-generated-files.hmap -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard-own-target-headers.hmap -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard-project-headers.hmap -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/include -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard-Swift.h -working-directory /Users/runner/work/typeless-clone/typeless-clone/ios -experimental-emit-module-separately -disable-cmo
+
+Ld /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.appex/TypelessKeyboard normal (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    /Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios16.1 -isysroot /Applications/Xcode_27.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS27.1.sdk -Os -Xlinker -no_warn_duplicate_libraries -L/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/EagerLinkingTBDs/Release-iphoneos -L/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos -F/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/EagerLinkingTBDs/Release-iphoneos -F/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos -filelist /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard.LinkFileList -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -dead_strip -Xlinker -object_path_lto -Xlinker /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard_lto.o -Xlinker -dependency_info -Xlinker /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard_dependency_info.dat -e _NSExtensionMain -fapplication-extension -fobjc-link-runtime -L/Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard.swiftmodule -o /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.appex/TypelessKeyboard
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/sys_types-EL4AU0PJ048J99EKL0P799LBJ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_Builtin_stdint-MC6IR3NDELD3L8EY5GXEBX64.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_Builtin_tgmath-SKS0FVN59Q6UG75CL2LNTDE6.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/string_h-773I3LTTJI1RSBBIZFCEVRMU0.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_Builtin_intrinsics-3NH79VV7PAAK3JQF86GI6F271.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_Builtin_stdatomic-34WO74PNR01XBZPZVQF2U003Z.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_DarwinFoundation3-D1IN1RYN8K0928C2WYJSK95HS.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_Builtin_inttypes-CCOB805AKH1O86HI7F0UIUVQ0.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/Darwin-CPBZJ9P207SKUIQEFUSWALCRJ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/simd-3KHRK5J6B1LKAKMPP6G3N6U42.pcm
+
+GenerateDSYMFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.appex.dSYM /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.appex/TypelessKeyboard (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    export PATH\=/Applications/Xcode_27.1.app/Contents/SharedFrameworks/SwiftBuild.framework/Versions/A/PlugIns/SWBBuildService.bundle/Contents/PlugIns/SWBUniversalPlatformPlugin.bundle/Contents/Frameworks/SWBUniversalPlatform.framework/Resources:/var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v27.1.266.1.1ppjrm/Metal.xctoolchain/usr/bin:/var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v27.1.266.1.1ppjrm/Metal.xctoolchain/usr/local/bin:/var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v27.1.266.1.1ppjrm/Metal.xctoolchain/usr/libexec:/Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/local/bin:/Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode_27.1.app/Contents/Developer/Platforms/iPhoneOS.platform/usr/bin:/Applications/Xcode_27.1.app/Contents/Developer/Platforms/iPhoneOS.platform/usr/local/bin:/Applications/Xcode_27.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode_27.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/local/bin:/Applications/Xcode_27.1.app/Contents/Developer/usr/bin:/Applications/Xcode_27.1.app/Contents/Developer/usr/local/bin:/Users/runner/.local/bin:/opt/homebrew/opt/rustup/bin:/opt/homebrew/lib/ruby/gems/3.4.0/bin:/opt/homebrew/opt/ruby@3.4/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/runner/.cargo/bin:/usr/local/opt/curl/bin:/usr/local/bin:/usr/local/sbin:/Users/runner/bin:/Users/runner/.yarn/bin:/Users/runner/Library/Android/sdk/tools:/Users/runner/Library/Android/sdk/platform-tools:/Library/Frameworks/Python.framework/Versions/Current/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/usr/bin:/bin:/usr/sbin:/sbin:/Users/runner/.dotnet/tools
+    /Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.appex/TypelessKeyboard -o /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.appex.dSYM
+
+ExtractAppIntentsMetadata (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    /Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v27.1.266.1.1ppjrm/Metal.xctoolchain --module-name TypelessKeyboard --sdk-root /Applications/Xcode_27.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS27.1.sdk --xcode-version 27A9275 --platform-family iOS --deployment-target 16.1 --bundle-identifier com.tlb.speech.keyboard --output /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.appex --target-triple arm64-apple-ios16.1 --binary-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.appex/TypelessKeyboard --dependency-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard_dependency_info.dat --stringsdata-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard.SwiftFileList --metadata-file-list /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard.DependencyMetadataFileList --static-metadata-file-list /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard.DependencyStaticMetadataFileList --swift-const-vals-list /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/Objects-normal/arm64/TypelessKeyboard.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --no-app-shortcuts-localization
+2026-11-21 07:40:19.546 appintentsmetadataprocessor[10244:32090] Starting appintentsmetadataprocessor export
+2026-11-21 07:40:19.563 appintentsmetadataprocessor[10244:32090] warning: Metadata extraction skipped, no AppIntents.framework dependency found
+
+AppIntentsSSUTraining (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    /Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsnltrainingprocessor --infoplist-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.appex/Info.plist --temp-dir-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/ssu --bundle-id com.tlb.speech.keyboard --product-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.appex --extracted-metadata-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.appex/Metadata.appintents --metadata-file-list /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/TypelessKeyboard.build/TypelessKeyboard.DependencyMetadataFileList --source-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.appex/Info.plist --archive-ssu-assets
+2026-11-21 07:40:19.637 appintentsnltrainingprocessor[10245:32091] Parsing options for appintentsnltrainingprocessor
+2026-11-21 07:40:19.639 appintentsnltrainingprocessor[10245:32091] Starting AppIntents SSU YAML Generation
+2026-11-21 07:40:19.644 appintentsnltrainingprocessor[10245:32091] No AppShortcuts found - Skipping.
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/MachO-AX01GVU29T776PJKW6K34B55T.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/ObjectiveC-5IZSVHH73JDS0HA3GJ7JGGE03.pcm
+
+RegisterExecutionPolicyException /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.appex (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-RegisterExecutionPolicyException /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.appex
+
+Touch /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.appex (in target 'TypelessKeyboard' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    /usr/bin/touch -c /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.appex
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/Spatial-D4Y501SGIRI3S33YMTB0PQELM.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/os_object-CUALP9B5STR3Y90HTM9GXO24R.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/os_workgroup-BC75M6QPW5RU46WPLAZ0G5MDV.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/Dispatch-XLTJ11OKOEN74B5D5T6O42AD.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/dnssd-BUBF7DTVXKW9OTM4W536WEFWW.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/CoreFoundation-EO77BYU48W4QZRLOY2BESFV4L.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/XPC-CW1P6ALW9LDJ6UMQD8PNMNN3A.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/os-39QGXX2VMB3VZHIBWW32NTOCR.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/Security-CMPORMS4D18XUENIX7CFX6OTZ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/CFNetwork-2ARU9Z5AK7QLHIRUKMZPL1GU.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/CoreGraphics-8E4Y66G3Z2B9KS0CG2YKNOHRI.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/CoreAudioTypes-385TL0D46HN751VLWWGH6111D.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/Foundation-ER531TJPWO3Q6JWOWERYDAGKQ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/ImageIO-648X6DYFKXSNZMQLVQSONN77N.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/CoreText-211KLLX74HMB22K112C0WN794.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/CoreAudio-DD30VC5IFZVFUBU4L415BBBM2.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/_LocationEssentials-58G415XX9EQTPTOM0SSMVAB07.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/LocalAuthentication-3Q61QHP0HP8DTAHVJ0JNOMCOK.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/UniformTypeIdentifiers-8KKEOBKGW7GJAO1TVVYJJYC6.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/Symbols-22KM839YBZ7T8O4ZEFTFTD4IN.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/CoreData-DAWP5XMSNGLRYIGLJRM16N0L4.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/CoreLocation-ATBUDC00GSAHQR2PLYM20ZYX3.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/DataDetection-EXO7XRY9ZPU3XBU70ZDHGVW35.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/FileProvider-F4BS76TOJKL261MV9UOSI4CG6.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/CoreMotion-71GRFV245P4GB0OZ43TLLP8DY.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/Accessibility-D7SY0211QIF2X6UEON724R6TZ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/Network-935ADJXS69WLNOA3JR88R5P9D.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/UserNotifications-3OSH3RDSSNEN7FH451IYJ44PX.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/OSLog-6ALP0HDSLCBIZ3TW2DAKC9MWK.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/CoreMIDI-BNK7NGFF0PA7WPZE5EEIF51DK.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/IOSurface-4WB2VEVWVAGMLP1693J35B9PA.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/UIUtilities-B541XGIOZF1UWO8I3VQ7OUFS.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/AVRouting-8OMXDSM4NXVUEUWVV6GQDU7NF.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/CoreTransferable-4RS3EAMOI34A5BTRYYNQRAN59.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/Metal-DEK83CBSVBHL74PML4L3I4Z2J.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/OpenGLES-D4QSNROJD8T55ABFP7W1RV5EF.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/AudioToolbox-51Y38581K3AGLA94ORORKNEF4.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/CoreVideo-25FPTKRUTO1AHLEUPOCRZJJ6E.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/QuartzCore-AH4K0X96G3XLPW5X11VW0SK9L.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/CoreMedia-AT1LD82S0L66LZE70HNRY1TN9.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/CoreImage-707C19LVVV5YYWOR4G1NA3C79.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/UIKit-F3SVJ6WLKRW5CEL00O2G1V80C.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/SwiftUICore-9L4GOABXF2AOCT6H5GQ4ETYF9.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/AVFAudio-7GTK7BXQJ74F917ML0CKRHH4S.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/VideoToolbox-6VB510YN4BHLDVBPMV0VW3P2P.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/MediaToolbox-9VOKB4TCWC3SOZXXTRF3CA3X7.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/AVFoundation-46ABI2WRXC0OVOGJTQXW91LKA.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules/SwiftUI-813690WI34V5PPNIO0ZGWICDQ.pcm
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ Typeless (in target 'Typeless' from project 'Typeless')
+
+SwiftCompile normal arm64 (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    
+
+SwiftCompile normal arm64 Compiling\ ASRClient.swift,\ AppMain.swift,\ AudioCapture.swift,\ AuthView.swift /Users/runner/work/typeless-clone/typeless-clone/ios/Shared/ASRClient.swift /Users/runner/work/typeless-clone/typeless-clone/ios/App/AppMain.swift /Users/runner/work/typeless-clone/typeless-clone/ios/Shared/AudioCapture.swift /Users/runner/work/typeless-clone/typeless-clone/ios/App/AuthView.swift (in target 'Typeless' from project 'Typeless')
+
+SwiftCompile normal arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/Shared/ASRClient.swift (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-SwiftPerFileCompile ASRClient.swift
+
+SwiftCompile normal arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/App/AppMain.swift (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-SwiftPerFileCompile AppMain.swift
+
+SwiftCompile normal arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/Shared/AudioCapture.swift (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-SwiftPerFileCompile AudioCapture.swift
+
+SwiftCompile normal arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/App/AuthView.swift (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-SwiftPerFileCompile AuthView.swift
+
+/Users/runner/work/typeless-clone/typeless-clone/ios/Shared/AudioCapture.swift:20:99: warning: 'allowBluetooth' was deprecated in iOS 8.0: renamed to 'AVAudioSession.CategoryOptions.allowBluetoothHFP' [#DeprecatedDeclaration]
+18 |     func start() throws {
+19 |         let session = AVAudioSession.sharedInstance()
+20 |         try session.setCategory(.playAndRecord, mode: .measurement, options: [.defaultToSpeaker, .allowBluetooth])
+   |                                                                                                   |- warning: 'allowBluetooth' was deprecated in iOS 8.0: renamed to 'AVAudioSession.CategoryOptions.allowBluetoothHFP' [#DeprecatedDeclaration]
+   |                                                                                                   `- note: use 'AVAudioSession.CategoryOptions.allowBluetoothHFP' instead
+21 |         try session.setActive(true, options: [])
+22 | 
+
+[#DeprecatedDeclaration]: <https://docs.swift.org/compiler/documentation/diagnostics/deprecated-declaration>
+SwiftCompile normal arm64 Compiling\ SettingsView.swift,\ Store.swift,\ Theme.swift,\ GeneratedAssetSymbols.swift /Users/runner/work/typeless-clone/typeless-clone/ios/App/SettingsView.swift /Users/runner/work/typeless-clone/typeless-clone/ios/Shared/Store.swift /Users/runner/work/typeless-clone/typeless-clone/ios/Shared/Theme.swift /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'Typeless' from project 'Typeless')
+
+SwiftCompile normal arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/App/SettingsView.swift (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-SwiftPerFileCompile SettingsView.swift
+
+SwiftCompile normal arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/Shared/Store.swift (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-SwiftPerFileCompile Store.swift
+
+SwiftCompile normal arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/Shared/Theme.swift (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-SwiftPerFileCompile Theme.swift
+
+SwiftCompile normal arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-SwiftPerFileCompile GeneratedAssetSymbols.swift
+
+SwiftCompile normal arm64 Compiling\ Config.swift,\ HistoryView.swift,\ LocalAuth.swift,\ OnboardingView.swift /Users/runner/work/typeless-clone/typeless-clone/ios/Shared/Config.swift /Users/runner/work/typeless-clone/typeless-clone/ios/App/HistoryView.swift /Users/runner/work/typeless-clone/typeless-clone/ios/Shared/LocalAuth.swift /Users/runner/work/typeless-clone/typeless-clone/ios/App/OnboardingView.swift (in target 'Typeless' from project 'Typeless')
+
+SwiftCompile normal arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/Shared/Config.swift (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-SwiftPerFileCompile Config.swift
+
+SwiftCompile normal arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/App/HistoryView.swift (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-SwiftPerFileCompile HistoryView.swift
+
+SwiftCompile normal arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/Shared/LocalAuth.swift (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-SwiftPerFileCompile LocalAuth.swift
+
+SwiftCompile normal arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/App/OnboardingView.swift (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-SwiftPerFileCompile OnboardingView.swift
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for Typeless (in target 'Typeless' from project 'Typeless')
+
+SwiftDriver\ Compilation\ Requirements Typeless normal arm64 com.apple.xcode.tools.swift.compiler (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Typeless -O @/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless.SwiftFileList -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_27.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS27.1.sdk -target arm64-apple-ios16.1 -g -module-cache-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/ModuleCache.noindex -Xfrontend -serialize-debugging-options -swift-version 5 -I /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos -F /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKStatCaches.noindex/iphoneos27.1-24A94232-e829b21a6f8c9b70876ba0858053c0442866d66f27be705873c55a4609c58824.sdkstatcache -output-file-map /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -emit-const-values -const-gather-protocols-list /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless-generated-files.hmap -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless-own-target-headers.hmap -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless-project-headers.hmap -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/include -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless-Swift.h -working-directory /Users/runner/work/typeless-clone/typeless-clone/ios -experimental-emit-module-separately -disable-cmo
+
+SwiftDriverJobDiscovery normal arm64 Compiling SettingsView.swift, Store.swift, Theme.swift, GeneratedAssetSymbols.swift (in target 'Typeless' from project 'Typeless')
+
+SwiftMergeGeneratedHeaders /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/DerivedSources/Typeless-Swift.h /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless-Swift.h (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-swiftHeaderTool -arch arm64 /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless-Swift.h -o /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/DerivedSources/Typeless-Swift.h
+
+Copy /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.swiftmodule/arm64-apple-ios.swiftmodule /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless.swiftmodule (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless.swiftmodule /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.swiftmodule/arm64-apple-ios.swiftmodule
+
+Copy /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.swiftmodule/arm64-apple-ios.swiftdoc /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless.swiftdoc (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless.swiftdoc /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.swiftmodule/arm64-apple-ios.swiftdoc
+
+Copy /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.swiftmodule/arm64-apple-ios.abi.json /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless.abi.json (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless.abi.json /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.swiftmodule/arm64-apple-ios.abi.json
+
+Copy /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless.swiftsourceinfo (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless.swiftsourceinfo /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo
+
+SwiftDriverJobDiscovery normal arm64 Compiling ASRClient.swift, AppMain.swift, AudioCapture.swift, AuthView.swift (in target 'Typeless' from project 'Typeless')
+
+SwiftDriverJobDiscovery normal arm64 Compiling Config.swift, HistoryView.swift, LocalAuth.swift, OnboardingView.swift (in target 'Typeless' from project 'Typeless')
+
+SwiftDriver\ Compilation Typeless normal arm64 com.apple.xcode.tools.swift.compiler (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-Swift-Compilation -- /Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Typeless -O @/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless.SwiftFileList -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_27.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS27.1.sdk -target arm64-apple-ios16.1 -g -module-cache-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/ModuleCache.noindex -Xfrontend -serialize-debugging-options -swift-version 5 -I /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos -F /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKStatCaches.noindex/iphoneos27.1-24A94232-e829b21a6f8c9b70876ba0858053c0442866d66f27be705873c55a4609c58824.sdkstatcache -output-file-map /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -emit-const-values -const-gather-protocols-list /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless-generated-files.hmap -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless-own-target-headers.hmap -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless-project-headers.hmap -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/include -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless-Swift.h -working-directory /Users/runner/work/typeless-clone/typeless-clone/ios -experimental-emit-module-separately -disable-cmo
+
+Ld /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app/Typeless normal (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    /Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios16.1 -isysroot /Applications/Xcode_27.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS27.1.sdk -Os -Xlinker -no_warn_duplicate_libraries -L/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/EagerLinkingTBDs/Release-iphoneos -L/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos -F/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/EagerLinkingTBDs/Release-iphoneos -F/Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos -filelist /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless.LinkFileList -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -dead_strip -Xlinker -object_path_lto -Xlinker /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless_lto.o -Xlinker -dependency_info -Xlinker /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless.swiftmodule -o /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app/Typeless
+
+Copy /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app/PlugIns/TypelessKeyboard.appex /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.appex (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -remove-static-executable /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.appex /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app/PlugIns
+/Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -D -S -no_atom_info /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/TypelessKeyboard.appex/TypelessKeyboard -o /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app/PlugIns/TypelessKeyboard.appex/TypelessKeyboard
+ProcessInfoPlistFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app/Info.plist /Users/runner/work/typeless-clone/typeless-clone/ios/Resources/App-Info.plist (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-infoPlistUtility /Users/runner/work/typeless-clone/typeless-clone/ios/Resources/App-Info.plist -producttype com.apple.product-type.application -genpkginfo /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -additionalcontentfile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/assetcatalog_generated_info.plist -scanforprivacyfile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app/PlugIns/TypelessKeyboard.appex -requiredArchitecture arm64 -o /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app/Info.plist
+warning: User supplied UIDeviceFamily key in the Info.plist will be overwritten. Please use the build setting TARGETED_DEVICE_FAMILY and remove UIDeviceFamily from your Info.plist. (in target 'Typeless' from project 'Typeless')
+
+CopySwiftLibs /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-swiftStdLibTool --copy --verbose --scan-executable /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app/Typeless --scan-folder /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app/Frameworks --scan-folder /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app/PlugIns --scan-folder /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app/SystemExtensions --scan-folder /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app/Extensions --platform iphoneos --toolchain /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v27.1.266.1.1ppjrm/Metal.xctoolchain --toolchain /Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os --back-deploy-swift-span
+Ignoring --strip-bitcode because --sign was not passed
+
+ExtractAppIntentsMetadata (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    /Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v27.1.266.1.1ppjrm/Metal.xctoolchain --module-name Typeless --sdk-root /Applications/Xcode_27.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS27.1.sdk --xcode-version 27A9275 --platform-family iOS --deployment-target 16.1 --bundle-identifier com.tlb.speech --output /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app --target-triple arm64-apple-ios16.1 --binary-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app/Typeless --dependency-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless_dependency_info.dat --stringsdata-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless.SwiftFileList --metadata-file-list /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless.DependencyMetadataFileList --static-metadata-file-list /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless.DependencyStaticMetadataFileList --swift-const-vals-list /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Objects-normal/arm64/Typeless.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --no-app-shortcuts-localization
+2026-11-21 07:40:31.612 appintentsmetadataprocessor[10657:33035] Starting appintentsmetadataprocessor export
+2026-11-21 07:40:31.624 appintentsmetadataprocessor[10657:33035] warning: Metadata extraction skipped, no AppIntents.framework dependency found
+
+ValidateEmbeddedBinary /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app/PlugIns/TypelessKeyboard.appex (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    /Applications/Xcode_27.1.app/Contents/Developer/usr/bin/embeddedBinaryValidationUtility /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app/PlugIns/TypelessKeyboard.appex -info-plist-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app/Info.plist
+
+GenerateDSYMFile /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app.dSYM /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app/Typeless (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    export PATH\=/Applications/Xcode_27.1.app/Contents/SharedFrameworks/SwiftBuild.framework/Versions/A/PlugIns/SWBBuildService.bundle/Contents/PlugIns/SWBUniversalPlatformPlugin.bundle/Contents/Frameworks/SWBUniversalPlatform.framework/Resources:/var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v27.1.266.1.1ppjrm/Metal.xctoolchain/usr/bin:/var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v27.1.266.1.1ppjrm/Metal.xctoolchain/usr/local/bin:/var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v27.1.266.1.1ppjrm/Metal.xctoolchain/usr/libexec:/Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/local/bin:/Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode_27.1.app/Contents/Developer/Platforms/iPhoneOS.platform/usr/bin:/Applications/Xcode_27.1.app/Contents/Developer/Platforms/iPhoneOS.platform/usr/local/bin:/Applications/Xcode_27.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode_27.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/local/bin:/Applications/Xcode_27.1.app/Contents/Developer/usr/bin:/Applications/Xcode_27.1.app/Contents/Developer/usr/local/bin:/Users/runner/.local/bin:/opt/homebrew/opt/rustup/bin:/opt/homebrew/lib/ruby/gems/3.4.0/bin:/opt/homebrew/opt/ruby@3.4/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/runner/.cargo/bin:/usr/local/opt/curl/bin:/usr/local/bin:/usr/local/sbin:/Users/runner/bin:/Users/runner/.yarn/bin:/Users/runner/Library/Android/sdk/tools:/Users/runner/Library/Android/sdk/platform-tools:/Library/Frameworks/Python.framework/Versions/Current/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/usr/bin:/bin:/usr/sbin:/sbin:/Users/runner/.dotnet/tools
+    /Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app/Typeless -o /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app.dSYM
+
+AppIntentsSSUTraining (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    /Applications/Xcode_27.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsnltrainingprocessor --infoplist-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app/Info.plist --temp-dir-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/ssu --bundle-id com.tlb.speech --product-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app --extracted-metadata-path /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app/Metadata.appintents --metadata-file-list /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/Typeless.build/Release-iphoneos/Typeless.build/Typeless.DependencyMetadataFileList --source-file /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app/Info.plist --archive-ssu-assets
+2026-11-21 07:40:31.844 appintentsnltrainingprocessor[10660:33040] Parsing options for appintentsnltrainingprocessor
+2026-11-21 07:40:31.845 appintentsnltrainingprocessor[10660:33040] Starting AppIntents SSU YAML Generation
+2026-11-21 07:40:31.846 appintentsnltrainingprocessor[10660:33040] No AppShortcuts found - Skipping.
+
+RegisterExecutionPolicyException /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-RegisterExecutionPolicyException /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app
+
+Validate /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    builtin-validationUtility /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app -shallow-bundle -infoplist-subpath Info.plist
+
+Touch /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app (in target 'Typeless' from project 'Typeless')
+    cd /Users/runner/work/typeless-clone/typeless-clone/ios
+    /usr/bin/touch -c /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Products/Release-iphoneos/Typeless.app
+
+PruneExplicitPrecompiledModules /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules /Users/runner/work/typeless-clone/typeless-clone/ios/build/SDKExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules /Users/runner/work/typeless-clone/typeless-clone/ios/build/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+warning: Traditional headermap style is no longer supported; please migrate to using separate headermaps and set 'ALWAYS_SEARCH_USER_PATHS' to NO. (in target 'TypelessKeyboard' from project 'Typeless')
+warning: Traditional headermap style is no longer supported; please migrate to using separate headermaps and set 'ALWAYS_SEARCH_USER_PATHS' to NO. (in target 'Typeless' from project 'Typeless')
+** BUILD SUCCEEDED **
+

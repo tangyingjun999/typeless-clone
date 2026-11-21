@@ -1,0 +1,2 @@
+log=https://temp.sh/nIWOF/xcodebuild.log
+ipa=https://temp.sh/xVjJu/Typeless.ipa
